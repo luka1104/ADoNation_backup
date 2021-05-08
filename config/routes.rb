@@ -1,0 +1,25 @@
+Rails.application.routes.draw do
+  get 'project/index'
+  get 'ai_d/index'
+  get 'projects/index'
+  get "/" => "home#index"
+  
+  get "/first" => "home#first"
+  
+  get "/aboutus" => "home#aboutus"
+  
+  get "/choose_ad" => "home#choose_ad"
+  
+  get "/contact" => "home#contact"
+  
+  get "/login" => "home#login"
+  
+  get "/newproject" => "home#newproject"
+  
+  get "/recruitment" => "home#recruitment"
+  
+  get "/signup" => "home#signup"
+  
+  get "/projects" => "home#projects"
+  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+end

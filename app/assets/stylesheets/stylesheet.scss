@@ -1,0 +1,356 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+body {
+    margin: 0
+}
+a {
+    text-decoration: none;
+}
+header {
+    background-color: rgba(39, 212, 160, 0.9);
+    height: 66px;
+    width: 100%;
+    position: fixed;
+    z-index: 10;
+}
+.header-logo {
+    color: seashell;
+    font-size: 32px;
+    float: left;
+    padding: 0px 40px;
+    line-height: 66px;
+}
+#search {
+    background-color: rgb(255, 255, 255);
+    height: 10px;
+    padding: 8px;
+    float: left;
+    position:relative;
+    top: 18px;
+    }
+#kensaku {
+    color: gray;
+    font-size:20px;
+    border: none;
+    background: none;
+    height:66px;
+    float: left;
+    position:relative;
+    left: -32px;
+}
+#kensaku :hover {
+    color: rgba(39, 212, 160, 0.9);
+}
+.header-list a {
+    color: seashell;
+    list-style: none;
+    float: right;
+    padding: 0px 20px;
+    display: block;
+    line-height: 66px;
+    position: relative;
+    bottom: 16px;
+}
+.header-list a:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+main {
+    width: 100%;
+}
+.test {
+    text-align: center;
+    font-size: 100px;
+    padding-top: 100px;
+}
+.top-wrapper {
+    background-image: url(https://fh1w93s8iw-flywheel.netdna-ssl.com/wp-content/uploads/2020/04/coinjar-1024x480.jpg);
+    background-size: cover;
+    height: 700px;
+    text-align: center;
+    width: 100%;
+    position: relative;
+    bottom: 10px;
+}
+.container {
+    width: 100%;
+    color:white;
+    opacity: 1;
+    padding-top: 80px;
+}
+.login-container {
+    width: 100%;
+    color:white;
+    opacity: 1;
+    padding-top: 80px;
+    height: 870px;
+}
+.signup-container {
+    width: 100%;
+    color:white;
+    opacity: 1;
+    padding-top: 80px;
+    height: 700px;
+}
+.container h1 {
+    font-size: 45px;
+    letter-spacing: 10px;
+    padding: 40px;
+    margin: 0px;
+}
+.container p {
+    padding: 5px 20px;
+}
+.sign-up {
+    max-width: 420px;
+    height: 580px;
+    padding-top: 50px;
+    margin-bottom: 50px;
+    color: black;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    border: 1px solid #e4e4e4;
+    background-color: #F6F8FA;
+}
+.login {
+    max-width: 420px;
+    height: 722px;
+    padding-top: 50px;
+    margin-bottom: 50px;
+    color: black;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    border: 1px solid #e4e4e4;
+    background-color: #F6F8FA;
+}
+.login-input {
+    h2 {
+        max-width: 338px;
+        margin: 0 auto;
+        padding-bottom: 20px;
+        margin-bottom: 30px;
+        border-bottom: 1px solid #e4e4e4;
+    }
+    p {
+        float: left;
+        padding: 0px 0px 0px 41px;
+        margin: 0px 0px 5px 0px;
+        font-size: 12px;
+    }
+    a {
+        float: right;
+        font-size: 12px;
+        padding-right: 41px;
+    }
+}
+#userid {
+    width: 300px;
+    margin: 0 41px 20px 41px;
+    padding: 15px;
+}
+#password {
+    width: 300px;
+    margin: 0 41px 20px 41px;
+    padding: 15px;
+}
+.checkbox {
+    width: 338px;
+    text-align: center;
+    padding: 0px 0px 0px 41px;
+    margin: 0px 0px 20px 0px;
+    font-size: 12px;
+}
+.login-btn-wrapper {
+    height: 330px;
+    margin: 0px auto;
+    width: 338px;
+    border-bottom: 1px solid #e4e4e4;
+    p {
+        font-size: 10px;
+    }
+}
+.signup-link {
+    padding-top: 20px;
+}
+.sns-long-btn {
+    margin: 5px auto;
+}
+.login-line {
+    background-color: #00c300;
+    margin-top: 20px;
+}
+.or-separater {
+    width: 338px;
+    //border-top: 1px solid #e4e4e4;
+    margin: 0px auto;
+    font-size: 12px;
+}
+.btn-wrapper {
+    margin: 20px 0px;
+}
+.btn1 {
+    padding: 8px 24px;
+    color: white;
+    display: inline-block;
+    opacity: 0.7;
+    border-radius: 5px;
+    transition: all 1s;
+    box-shadow: 3px 3px saddlebrown;
+}
+.btn {
+    padding: 8px 24px;
+    color: white;
+    display: inline-block;
+    opacity: 0.7;
+    border-radius: 5px;
+    box-shadow: 3px 3px black;
+}
+.long-btn {
+    padding: 8px 24px;
+    color: white;
+    display: inline-block;
+    opacity: 1;
+    border-radius: 5px;
+    width: 330px;
+    border: none;
+}
+.sns-long-btn {
+    width: 330px;
+    padding: 8px 24px;
+    color: white;
+    display: inline-block;
+    opacity: 1;
+    border-radius: 5px;
+    font-size: 12px;
+}
+.long-btn:hover {
+    opacity: 0.7;
+}
+.long-btn:active {
+    box-shadow: none;
+    position: relative;
+    top: 3px;
+    bottom: 3px;
+    transition: all 0s;
+}
+.login-submit {
+    background-color: #239b76;
+    margin-bottom: 20px;
+}
+.rotateplace {
+    height: 200px;
+    text-align: center;
+    width: 100%;
+}
+.adcontainer {
+    height: 150px;
+    position: relative;
+    width: 100%;
+    text-align: center;
+    margin: auto;
+}
+.hot-project {
+    //height: 300px;
+    padding: 20px 0px;
+    width: 100%;
+    text-align: center;
+}
+.popular-project {
+    height: 300px;
+    width: 100%;
+    text-align: center;
+}
+.resent-project {
+    height: 300px;
+    width: 100%;
+    text-align: center;
+}
+.playad {
+    background-color: #239b76;
+}
+.btn:hover {
+    opacity: 1;
+}
+.btn:active {
+    box-shadow: none;
+    position: relative;
+    top: 3px;
+    bottom: 3px;
+    transition: all 0s;
+}
+.btn1:hover {
+    opacity: 1;
+}
+.btn1:active {
+    box-shadow: none;
+    position: relative;
+    top: 3px;
+    bottom: 3px;
+    transition: all 0s;
+}
+.signup {
+    background-color: #239b76;
+}
+.facebook {
+    background-color: #3b5998;
+    margin-right: 10px;
+}
+.login-facebook {
+    background-color: #3b5998;
+}
+.login-apple {
+    background-color: black;
+}
+.twitter {
+    background-color: #55acee;
+}
+.login-twitter {
+    background-color: #55acee;
+}
+.fab {
+    float: left;
+    font-size: 15px;
+}
+.fas {
+    float: left;
+    font-size: 15px;
+}
+footer {
+    background-color: rgb(46, 55, 63);
+    height: 150px;
+    width: 100%;
+}
+.footer-logo {
+    color:rgb(255, 255, 255);
+    font-size: 32px;
+    float: left;
+    padding: 0px 40px;
+    line-height: 150px;
+}
+.footer-list ul {
+    margin: 0;
+    height: 150px;
+}
+.footer-list {
+    float: right;
+}
+.footer-list a {
+    color:rgb(255, 255, 255);
+}
+.footer-list l {
+    list-style: none;
+    padding: 19.5px 20px 9.75px 0px;
+    display: block;
+}
+.footer-list li {
+    list-style: none;
+    padding: 9.75px 20px 9.75px 0px;
+    display: block;
+}
+.footer-list lis {
+    list-style: none;
+    padding: 9.75px 20px 19.5px 0px;
+    display: block;
+}

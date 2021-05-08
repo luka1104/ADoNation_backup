@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>ADonation</title>
+        <link rel="stylesheet" href="cmn/css/stylesheet.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+    </head>
+    <body>
+        <header>
+            <a href="/" class="header-logo">ADoNation</a>
+            <form action="/projects" method="get">
+             <input id="search" id="s" name="s" type="text" placeholder="キーワード検索"/>
+             <button type="submit" id="kensaku"><i class="fas fa-search"></i></button>
+            </form>
+                <div class="header-list">
+                    <ul>
+                        <a href="/signup">新規登録</a>
+                        <a href="/login">ログイン</a>
+                        <a href="/contact">お問い合わせ</a>
+                        <a href="/newproject">プロジェクトを掲載する</a>
+                        <a href="/first">初めての方へ</a>
+                    </ul>
+                </div>
+        </header>   
+        <main>
+            <div class="login-container">
+                <div class="login">
+                    <div class="login-input">
+                        <h2>ログイン</h2>
+                        <p>ユーザー名 or メールアドレス</p>
+                        <form action="/login" method="get">
+                            <input id="userid" id="s" name="s" type="text" placeholder="ユーザー名 or メールアドレス"/>
+                        </form>
+                        <p>パスワード</p><a href="/login">パスワードを忘れた方はこちら</a>
+                        <form action="/login" method="get">
+                            <input id="password" id="s" name="s" type="text" placeholder="パスワード"/>
+                        </form>
+                        <div class="checkbox">
+                            <input type="checkbox" value="1" checked="checked">
+                            ログイン状態を保存する
+                        </div>
+                    </div>
+                        <div class="login-btn-wrapper">
+                            <a href="/login"><input type="submit" class="long-btn login-submit" value="ログイン"></a>
+                            <p class="or-separater">or</p>
+                            <a href="/signup" class="sns-long-btn login-line">
+                                <i class="fas fa-plus"></i>
+                                LINEでアカウントでログイン
+                            </a>
+                            <a href="https://www.facebook.com/" class="sns-long-btn login-facebook">
+                                <i class="fab fa-facebook-f"></i>
+                                Facebookでアカウントでログイン
+                            </a>
+                            <a href="https://www.twitter.com/" class="sns-long-btn login-twitter">
+                                <i class="fab fa-twitter"></i>
+                                Twitterアカウントでログイン
+                            </a>
+                            <a href="https://www.apple.com/" class="sns-long-btn login-apple">
+                                <i class="fab fa-apple"></i>
+                                Appleでサインイン
+                            </a>
+                            <p class="readme">＊利用者の許可なく外部サービスに使用されることはありません</p>
+                        </div>
+                        <div class="signup-link">
+                            <a href="/signup">新規会員登録はこちら</a>
+                        </div>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <a href="/" class="footer-logo">ADoNation</a>
+            <div class="footer-list">
+                <ul>
+                    <l><a href="/aboutus">会社概要</a></l>
+                    <li><a href="/recruitment">採用</a></li>
+                    <lis><a href="/contact">お問い合わせ</a></lis>
+                </ul>
+            </div>
+        </footer>
+    </body>
+</html>

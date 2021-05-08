@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>ADonation</title>
+        <link rel="stylesheet" href="app/assets/stylesheets/stylesheet.scss">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+    </head>
+    <body>
+        <header>
+            <a href="/" class="header-logo">ADoNation</a>
+            <form action="/projects" method="get">
+             <input id="search" id="s" name="s" type="text" placeholder="キーワード検索"/>
+             <button type="submit" id="kensaku"><i class="fas fa-search"></i></button>
+            </form>
+                <div class="header-list">
+                    <ul>
+                        <a href="/signup">新規登録</a>
+                        <a href="/login">ログイン</a>
+                        <a href="/contact">お問い合わせ</a>
+                        <a href="/newproject">プロジェクトを掲載する</a>
+                        <a href="/first">初めての方へ</a>
+                    </ul>
+                </div>
+        </header>   
+        <main>
+            <div class="test">これはホームページです。</div>
+            <div class="main-top-wrapper">
+                <div class="rotateplace">
+                    <p>ここにバーが出ます</p>
+                </div>
+                <div class="adcontainer">
+                    <a href="/choose_ad" class="btn playad">
+                        広告を再生
+                    </a>
+                </div>
+                <div class="project-list">
+                    <% @projects.each do |project| %>
+                    <div class="hot-project">
+                       <%=project.content %> 
+                    </div>
+                    <% end %>
+                    <div class="popular-project">
+                        ここに人気プロジェクトが表示されます
+                    </div>
+                    <div class="resent-project">
+                        ここに新着プロジェクトが表示されます。
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <a href="/" class="footer-logo">ADoNation</a>
+            <div class="footer-list">
+                <ul>
+                    <l><a href="/aboutus">会社概要</a></l>
+                    <li><a href="/recruitment">採用</a></li>
+                    <lis><a href="/contact">お問い合わせ</a></lis>
+                </ul>
+            </div>
+        </footer>
+    </body>
+</html>
