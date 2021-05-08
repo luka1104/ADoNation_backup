@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   get 'project/index'
-  get 'ai_d/index'
   get 'projects/index'
   get "/" => "home#index"
   
@@ -21,5 +20,11 @@ Rails.application.routes.draw do
   get "/signup" => "home#signup"
   
   get "/projects" => "home#projects"
+
+  get "/projects/new" => "home#newprojects"
+
+  post "/projects/create" => "home#create"
+
+  get "/projects/:id" => "home#show"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

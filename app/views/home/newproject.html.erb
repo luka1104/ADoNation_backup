@@ -8,7 +8,15 @@
     </head>
     <body>   
         <main>
-            <div class="test">これはプロジェクト掲載ページです。</div>
+            <%= form_tag("/projects/create") do %>
+                <div class="form">
+                    <div class="submit-project">
+                        <h1>内容を入力してください。</h1>
+                        <textarea name="content"></textarea>
+                        <input type="submit" value="投稿">
+                    </div>
+                </div>
+            <% end %>
         </main>
     </body>
 </html>

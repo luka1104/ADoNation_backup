@@ -8,10 +8,8 @@
     </head>
     <body>   
         <main>
-            <div class="test">これはホームページです。</div>
             <div class="main-top-wrapper">
                 <div class="rotateplace">
-                    <p>ここにバーが出ます</p>
                 </div>
                 <div class="adcontainer">
                     <a href="/choose_ad" class="btn playad">
@@ -21,7 +19,7 @@
                 <div class="project-list">
                     <% @projects.each do |project| %>
                     <div class="hot-project">
-                       <%=project.content %> 
+                       <%=link_to(project.content, "/projects/#{project.id}") %> 
                     </div>
                     <% end %>
                     <div class="popular-project">

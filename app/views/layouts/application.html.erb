@@ -19,11 +19,11 @@
             </form>
                 <div class="header-list">
                     <ul>
-                        <a href="/signup">新規登録</a>
-                        <a href="/login">ログイン</a>
-                        <a href="/contact">お問い合わせ</a>
-                        <a href="/newproject">プロジェクトを掲載する</a>
-                        <a href="/first">初めての方へ</a>
+                        <%= link_to("新規登録","/signup") %>
+                        <%= link_to("ログイン","/login") %>
+                        <%= link_to("お問い合わせ","/contact") %>
+                        <%= link_to("プロジェクトを掲載する","/newproject") %>
+                        <%= link_to("初めての方へ","/first") %>
                     </ul>
                 </div>
         </header>
@@ -32,9 +32,9 @@
             <a href="/" class="footer-logo">ADoNation</a>
             <div class="footer-list">
                 <ul>
-                    <l><a href="/aboutus">会社概要</a></l>
-                    <li><a href="/recruitment">採用</a></li>
-                    <lis><a href="/contact">お問い合わせ</a></lis>
+                    <l><%= link_to("会社概要","/aboutus") %></l>
+                    <li><%= link_to("採用","/recruitment") %></li>
+                    <lis><%= link_to("お問い合わせ","/contact") %></lis>
                 </ul>
             </div>
         </footer>
