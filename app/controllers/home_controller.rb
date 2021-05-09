@@ -42,4 +42,7 @@ class HomeController < ApplicationController
     @project.save
     redirect_to("/")
   end
+
+  def edit
+  end
 end
