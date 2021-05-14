@@ -28,5 +28,9 @@ Rails.application.routes.draw do
   get "/projects/:id" => "home#show"
 
   get "/projects/:id/edit" => "home#edit"
+
+  post "projects/:id/update" => "home#update"
+
+  post "projects/:id/destroy" => "home#destroy"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

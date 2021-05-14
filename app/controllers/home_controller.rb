@@ -44,5 +44,19 @@ class HomeController < ApplicationController
   end
 
   def edit
+    @project = Project.find_by(id: params[:id])
+  end
+
+  def update
+    @project = Project.find_by(id: params[:id])
+    @project.content = params[:content]
+    @project.save
+    redirect_to("/")
+  end
+
+  def destroy
+    @project = Project.find_by(id: params[:id])
+    @project.destroy
+    redirect_to("/")
   end
 end
