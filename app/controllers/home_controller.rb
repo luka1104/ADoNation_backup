@@ -1,6 +1,5 @@
 class HomeController < ApplicationController
   def index
-    @projects = Project.all.order(created_at: :desc)
   end
   
   def first
@@ -41,12 +40,12 @@ class HomeController < ApplicationController
     @project = Project.new(content: params[:content])
     if @project.save
       flash[:notice] = "投稿を完了しました"
-      redirect_to("/")
+      redirect_to("/community")
     else
       @project.errors.full_messages.each do |message|
         flash[:notice] = "#{message}"
       end
-      render("home/newproject")
+      render("home/community")
     end
   end
 
@@ -59,7 +58,7 @@ class HomeController < ApplicationController
     @project.content = params[:content]
     if @project.save
       flash[:notice] = "投稿を編集しました"
-      redirect_to("/")
+      redirect_to("/community")
     else
       @project.errors.full_messages.each do |message|
         flash[:notice] = "#{message}"
@@ -72,6 +71,6 @@ class HomeController < ApplicationController
     @project = Project.find_by(id: params[:id])
     @project.destroy
     flash[:notice] = "投稿を削除しました"
-    redirect_to("/")
+    redirect_to("/community")
   end
 end

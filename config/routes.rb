@@ -23,11 +23,25 @@ Rails.application.routes.draw do
 
   get "/projects/new" => "home#newprojects"
 
-  post "/projects/create" => "home#create"
-
   get "/projects/:id" => "home#show"
 
+  post "/projects/create" => "home#create"
+
   get "/projects/:id/edit" => "home#edit"
+
+  get "/community" => "community#index"
+
+  get "/community/new" => "community#new"
+
+  get "/community/:id" => "community#show"
+
+  post "/community/create" => "community#create"
+
+  get "/community/:id/edit" => "community#edit"
+
+  post "community/:id/update" => "community#update"
+
+  post "community/:id/destroy" => "community#destroy"
 
   post "projects/:id/update" => "home#update"
 

@@ -17,15 +17,6 @@
                     </a>
                 </div>
                 <div class="project-list">
-                    <% @projects.each do |project| %>
-                    <div class="hot-project">
-                        <ul>
-                            <li>
-                                <%=link_to(project.content, "/projects/#{project.id}") %>
-                            </li> 
-                        </ul>
-                    </div>
-                    <% end %>
                     <div class="popular-project">
                         ここに人気プロジェクトが表示されます
                     </div>
