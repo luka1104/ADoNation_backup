@@ -27,6 +27,11 @@
                     </ul>
                 </div>
         </header>
+        <% if flash[:notice] %>
+            <div class="flash">
+                <%= flash[:notice] %>
+            </div>
+        <% end %>
     <%= yield %>
         <footer>
             <a href="/" class="footer-logo">ADoNation</a>

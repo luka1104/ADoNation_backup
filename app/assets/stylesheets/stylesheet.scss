@@ -61,6 +61,18 @@ header {
 .main {
     width: 100%;
 }
+.flash {
+    padding: 10px 0;
+    color: white;
+    background: rgb(204, 85, 228);
+    text-align: center;
+    position: absolute;
+    top: 64px;
+    z-index: 10;
+    width: 100%;
+    border-radius: 0 0 2px 2px;
+    font-size: 14px;
+  }
 .test {
     height: 1000px;
     text-align: center;
@@ -272,6 +284,9 @@ input {
     padding: 30px 30px 30px 10px;
     height: 250px;
 }
+.form-error {
+    color: #ff4d75;
+  }
 .edit-container {
     max-width: 600px;
     margin: 0 auto;
