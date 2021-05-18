@@ -131,13 +131,6 @@ header {
     padding-top: 80px;
     height: 870px;
 }
-.signup-container {
-    width: 100%;
-    color:white;
-    opacity: 1;
-    padding-top: 80px;
-    height: 750px;
-}
 .container h1 {
     font-size: 45px;
     letter-spacing: 10px;
@@ -146,18 +139,6 @@ header {
 }
 .container p {
     padding: 5px 20px;
-}
-.sign-up {
-    max-width: 420px;
-    height: 630px;
-    padding: 50px 0;
-    margin-bottom: 50px;
-    color: black;
-    display: block;
-    margin: 0 auto;
-    text-align: center;
-    border: 1px solid #e4e4e4;
-    background-color: #F6F8FA;
 }
 .login {
     max-width: 420px;
@@ -191,12 +172,6 @@ header {
         padding-right: 41px;
     }
 }
-#userid {
-    width: 330px;
-    margin: 0 41px 20px 41px;
-    padding: 15px;
-    background-color: white;
-}
 #password {
     width: 330px;
     margin: 0 41px 20px 41px;
@@ -221,19 +196,6 @@ header {
 }
 .signup-link {
     padding-top: 20px;
-}
-.sns-long-btn {
-    margin: 5px auto;
-}
-.login-line {
-    background-color: #00c300;
-    margin-top: 20px;
-}
-.or-separater {
-    width: 338px;
-    //border-top: 1px solid #e4e4e4;
-    margin: 0px auto;
-    font-size: 12px;
 }
 form input[type="submit"] {
     border: none;
@@ -317,34 +279,6 @@ input {
     border-radius: 5px;
     box-shadow: 3px 3px black;
 }
-.long-btn {
-    padding: 8px 24px;
-    color: white;
-    display: inline-block;
-    opacity: 1;
-    border-radius: 5px;
-    width: 330px;
-    border: none;
-}
-.sns-long-btn {
-    width: 330px;
-    padding: 8px 24px;
-    color: white;
-    display: inline-block;
-    opacity: 1;
-    border-radius: 5px;
-    font-size: 12px;
-}
-.long-btn:hover {
-    opacity: 0.7;
-}
-.long-btn:active {
-    box-shadow: none;
-    position: relative;
-    top: 3px;
-    bottom: 3px;
-    transition: all 0s;
-}
 .login-submit {
     background-color: #239b76;
     margin-bottom: 20px;
@@ -423,16 +357,7 @@ input {
     background-color: #3b5998;
     margin-right: 10px;
 }
-.login-facebook {
-    background-color: #3b5998;
-}
-.login-apple {
-    background-color: black;
-}
 .twitter {
-    background-color: #55acee;
-}
-.login-twitter {
     background-color: #55acee;
 }
 .fab {

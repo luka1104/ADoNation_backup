@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'users/index'
   get 'project/index'
   get 'projects/index'
   get "/" => "home#index"
@@ -17,9 +18,11 @@ Rails.application.routes.draw do
   
   get "/recruitment" => "home#recruitment"
   
-  get "/signup" => "home#signup"
+  get "/signup" => "users#new"
   
   get "/projects" => "home#projects"
+
+  get "/users" => "users#index"
 
   get "/projects/new" => "home#newprojects"
 
@@ -46,5 +49,13 @@ Rails.application.routes.draw do
   post "projects/:id/update" => "home#update"
 
   post "projects/:id/destroy" => "home#destroy"
+
+  get "/users/:id" => "users#show"
+
+  post "/users/create" => "users#create"
+
+  get "/users/:id/edit" => "users#edit"
+
+  post "/users/:id/update" => "users#update"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
