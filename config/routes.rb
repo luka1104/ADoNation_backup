@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   get "/aboutus" => "home#aboutus"
   
   get "/choose_ad" => "home#choose_ad"
+
+  get "/ad" => "home#ad_anonymous"
   
   get "/contact" => "home#contact"
   
@@ -61,5 +63,7 @@ Rails.application.routes.draw do
   post "login" => "users#login"
 
   post "logout" => "users#logout"
+
+  post "/users/:id/destroy" => "users#destroy"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

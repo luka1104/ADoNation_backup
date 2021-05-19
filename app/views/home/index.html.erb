@@ -12,9 +12,15 @@
                 <div class="rotateplace">
                 </div>
                 <div class="adcontainer">
-                    <a href="/choose_ad" class="btn playad">
-                        広告を再生
-                    </a>
+                    <% if @current_user %>
+                        <a href="/choose_ad" class="btn playad">
+                            広告を再生
+                        </a>
+                    <% else %>
+                        <a href="/ad" class="btn playad">
+                            広告を再生
+                        </a>
+                    <% end %>
                 </div>
                 <div class="project-list">
                     <div class="popular-project">
