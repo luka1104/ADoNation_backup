@@ -61,6 +61,10 @@ Rails.application.routes.draw do
   get "login" => "users#login_form"
 
   get "users/:id/likes" => "users#likes"
+
+  get "/clickdonate" => "home#clickdonate"
+
+  get "/clickdonateano" => "home#clickdonateano"
   
   post "login" => "users#login"
 

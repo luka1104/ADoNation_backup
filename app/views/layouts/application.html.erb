@@ -23,8 +23,8 @@
                     <ul>
                         <li><%= link_to(@current_user.name ,"/users/#{@current_user.id}") %></li>
                         <li><%= link_to("ログアウト","/logout",{method: "post"}) %></li>
-                        <li><%= link_to("ユーザー一覧","/users") %></li>
-                        <li><%= link_to("コミュニティ","/community") %></li>
+                        <li><%= link_to("mite寄付","/choose_ad") %></li>
+                        <li><%= link_to("タップde寄付","/clickdonate") %></li>
                         <li><%= link_to("プロジェクトを掲載する","/newproject") %></li>
                         <li><%= link_to("初めての方へ","/first") %></li>
                     </ul>
@@ -32,8 +32,8 @@
                     <ul>
                         <li><%= link_to("新規登録","/signup") %></li>
                         <li><%= link_to("ログイン","/login") %></li>
-                        <li><%= link_to("ユーザー一覧","/users") %></li>
-                        <li><%= link_to("コミュニティ","/community") %></li>
+                        <li><%= link_to("mite寄付","/ad") %></li>
+                        <li><%= link_to("タップde寄付","/clickdonateano") %></li>
                         <li><%= link_to("プロジェクトを掲載する","/newproject") %></li>
                         <li><%= link_to("初めての方へ","/first") %></li>
                     </ul>
