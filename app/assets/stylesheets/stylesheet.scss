@@ -17,6 +17,20 @@ header {
     position: fixed;
     z-index: 10;
 }
+.community-header {
+    background-color: rgba(231, 155, 41, 0.9);
+    height: 66px;
+    width: 100%;
+    position: fixed;
+    z-index: 10;
+}
+.aid-header {
+    background-color: rgba(209, 52, 73, 0.9);
+    height: 66px;
+    width: 100%;
+    position: fixed;
+    z-index: 10;
+}
 .header-logo {
     color: seashell;
     font-size: 32px;
