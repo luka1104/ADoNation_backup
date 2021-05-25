@@ -6,6 +6,7 @@ body {
 }
 a {
     text-decoration: none;
+    color: black;
 }
 h1 {
     font-weight: 100;
@@ -37,6 +38,31 @@ header {
     float: left;
     padding: 0px 40px;
     line-height: 66px;
+    position: relative;
+}
+#logo-menu {
+    display: none;
+    float: left;
+    font-size: 32px;
+    line-height: 66px;
+    height: 198px;
+    width: 450px;
+    position: absolute;
+    a {
+        color: white;
+    }
+    .logo-ado {
+        background-color: rgba(39, 212, 160, 0.9);
+    }
+    .logo-com {
+        background-color: rgba(231, 155, 41, 0.9);
+    }
+    .logo-aid {
+        background-color: rgba(209, 52, 73, 0.9);
+    }
+    .menu-text {
+        padding-left: 40px;
+    }
 }
 #search {
     background-color: rgb(255, 255, 255);
@@ -71,6 +97,25 @@ header {
 }
 .header-list a:hover {
     background-color: rgba(255, 255, 255, 0.5);
+}
+.donate {
+    position: relative;
+}
+.donate-menu {
+    display: none;
+    position: absolute;
+    padding-top: 66px;
+    height: 66px;
+    padding-left: 900px;
+    .donate-text{
+        background-color: #ff4f75;
+        float: right;
+        width: 250px;
+        text-align: center;
+    }
+    a:hover {
+        background-color: rgba(255, 79, 117, 0.5);
+    }
 }
 .main {
     width: 100%;

@@ -9,10 +9,6 @@
     <body>   
         <main>
             <div class="main-top-wrapper">
-                <div class="rotateplace">
-                    <%= link_to("ADoNation-Community-へ", "/community") %>
-                    <%= link_to("ADoNation-Aid-へ", "/aid") %>
-                </div>
                 <div class="adcontainer">
                     <% if @current_user %>
                         <a href="/choose_ad" class="btn playad">
@@ -26,10 +22,10 @@
                 </div>
                 <div class="project-list">
                     <div class="popular-project">
-                        ここに人気プロジェクトが表示されます
+                        <p>ここに人気プロジェクトが表示されます</p>
                     </div>
                     <div class="resent-project">
-                        ここに新着プロジェクトが表示されます。
+                        <p>ここに新着プロジェクトが表示されます。</p>
                     </div>
                 </div>
             </div>

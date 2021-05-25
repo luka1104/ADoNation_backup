@@ -13,7 +13,14 @@
 
   <body>
         <header>
-            <a href="/" class="header-logo">ADoNation</a>
+            <div id="logo">
+                <a href="/" class="header-logo">ADoNation</a>
+                <div id="logo-menu">
+                    <li><a href="/" class="menu-text">ADoNation</a></li>
+                    <li class="logo-com"><a href="/community" class="menu-text">ADoNation-Community-</a></li>
+                    <li class="logo-aid"><a href="/aid" class="menu-text">ADoNation-AiD-</a></li>
+                </div>
+            </div>
             <form action="/projects" method="get">
              <input id="search" id="s" name="s" type="text" placeholder="キーワード検索"/>
              <button type="submit" id="kensaku"><i class="fas fa-search"></i></button>
@@ -23,18 +30,28 @@
                     <ul>
                         <li><%= link_to(@current_user.name ,"/users/#{@current_user.id}") %></li>
                         <li><%= link_to("ログアウト","/logout",{method: "post"}) %></li>
-                        <li><%= link_to("mite寄付","/choose_ad") %></li>
-                        <li><%= link_to("タップde寄付","/clickdonate") %></li>
-                        <li><%= link_to("寄付を募る","/raise-donate") %></li>
+                        <li class="donate">
+                            <a href="#">寄付する</a>
+                            <ul class="donate-menu">
+                                <a href="/choose_ad" class="donate-text">mite寄付</a>
+                                <a href="/clickdonate" class="donate-text">タップde寄付</a>
+                            </ul>
+                        </li>
+                        <li><%= link_to("寄付を募る","/raise_donate") %></li>
                         <li><%= link_to("初めての方へ","/first") %></li>
                     </ul>
                 <% else %>
                     <ul>
                         <li><%= link_to("新規登録","/signup") %></li>
                         <li><%= link_to("ログイン","/login") %></li>
-                        <li><%= link_to("mite寄付","/ad") %></li>
-                        <li><%= link_to("タップde寄付","/clickdonate-ano") %></li>
-                        <li><%= link_to("寄付を募る","/raise-donate") %></li>
+                        <li class="donate">
+                            <a href="#">寄付する</a>
+                            <ul class="donate-menu">
+                                <a href="/ad" class="donate-text">mite寄付</a>
+                                <a href="/clickdonate_ano" class="donate-text">タップde寄付</a>
+                            </ul>
+                        </li>
+                        <li><%= link_to("寄付を募る","/raise_donate") %></li>
                         <li><%= link_to("初めての方へ","/first") %></li>
                     </ul>
                 <% end %>
