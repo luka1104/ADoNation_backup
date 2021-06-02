@@ -1,5 +1,7 @@
 class HomeController < ApplicationController
   before_action :authenticate_user,{only:[:choose_ad]}
+  before_action :authenticate_user_admin,{only:[:raisedonateadmin]}
+
   def index
   end
   
@@ -28,6 +30,12 @@ class HomeController < ApplicationController
   end
   
   def projects
+  end
+
+  def raisedonate
+  end
+
+  def raisedonateadmin
   end
 
   def show

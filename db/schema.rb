@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_21_070518) do
+ActiveRecord::Schema.define(version: 2021_06_02_165457) do
 
   create_table "likes", force: :cascade do |t|
     t.integer "user_id"
@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 2021_05_21_070518) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "image_name"
     t.string "password_digest"
+    t.boolean "admin", default: false
   end
 
 end

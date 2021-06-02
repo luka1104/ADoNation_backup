@@ -16,6 +16,8 @@ Rails.application.routes.draw do
   get "/contact" => "home#contact"
   
   get "/raise_donate" => "home#raisedonate"
+
+  get "/raise_donate_admin" => "home#raisedonateadmin"
   
   get "/recruitment" => "home#recruitment"
   

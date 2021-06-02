@@ -37,7 +37,11 @@
                                 <a href="/clickdonate" class="donate-text">タップde寄付</a>
                             </ul>
                         </li>
-                        <li><%= link_to("寄付を募る","/raise_donate") %></li>
+                        <% if @current_user.admin %>
+                            <li><%= link_to("寄付を募る","/raise_donate_admin") %></li>
+                        <% else %>
+                            <li><%= link_to("寄付を募る","/raise_donate") %></li>
+                        <% end %>
                         <li><%= link_to("初めての方へ","/first") %></li>
                     </ul>
                 <% else %>

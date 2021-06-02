@@ -12,6 +12,16 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def authenticate_user_admin
+    if @current_user == nil
+        flash[:notice] = "権限がありません"
+        redirect_to("/")
+    elsif @current_user.admin == false
+        flash[:notice] = "権限がありません"
+        redirect_to("/")
+    end
+  end
+
   def forbid_login_user
     if @current_user
         flash[:notice] = "既にログインしています"
