@@ -99,20 +99,21 @@ header {
     background-color: rgba(255, 255, 255, 0.5);
 }
 .donate {
-    position: relative;
+    position:relative
 }
 .donate-menu {
     display: none;
+    float: none;
     position: absolute;
-    padding-top: 66px;
+    right: 50px;
+    top: 66px;
     height: 66px;
-    padding-left: 900px;
-    .donate-text{
+    .donate-text {
         background-color: #ff4f75;
-        float: right;
-        width: 250px;
+        width: 200px;
         text-align: center;
     }
+    
     a:hover {
         background-color: rgba(255, 79, 117, 0.5);
     }
