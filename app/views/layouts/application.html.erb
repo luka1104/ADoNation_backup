@@ -38,9 +38,9 @@
                             </ul>
                         </li>
                         <% if @current_user.admin %>
-                            <li><%= link_to("寄付を募る","/raise_donate_admin") %></li>
+                            <li><%= link_to("寄付を募る","/donate/raise_donate_admin") %></li>
                         <% else %>
-                            <li><%= link_to("寄付を募る","/raise_donate") %></li>
+                            <li><%= link_to("寄付を募る","/donate/raise_donate") %></li>
                         <% end %>
                         <li><%= link_to("初めての方へ","/first") %></li>
                     </ul>
@@ -55,7 +55,7 @@
                                 <a href="/clickdonate_ano" class="donate-text">タップde寄付</a>
                             </ul>
                         </li>
-                        <li><%= link_to("寄付を募る","/raise_donate") %></li>
+                        <li><%= link_to("寄付を募る","/donate/raise_donate") %></li>
                         <li><%= link_to("初めての方へ","/first") %></li>
                     </ul>
                 <% end %>

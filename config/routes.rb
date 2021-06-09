@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'donate/index'
   get 'ai_d/index'
   get 'users/index'
   get 'project/index'
@@ -15,9 +16,9 @@ Rails.application.routes.draw do
   
   get "/contact" => "home#contact"
   
-  get "/raise_donate" => "home#raisedonate"
+  get "/donate/raise_donate" => "donate#index"
 
-  get "/raise_donate_admin" => "home#raisedonateadmin"
+  get "/donate/raise_donate_admin" => "donate#index_admin"
   
   get "/recruitment" => "home#recruitment"
   
@@ -32,6 +33,12 @@ Rails.application.routes.draw do
   get "/projects/:id" => "home#show"
 
   post "/projects/create" => "home#create"
+
+  post "/donate/create" => "donate#create"
+
+  get "/donate/new" => "donate#new"
+
+  get "/donate/:id" => "donate#preview"
 
   get "/projects/:id/edit" => "home#edit"
 
