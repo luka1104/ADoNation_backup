@@ -19,6 +19,8 @@ Rails.application.routes.draw do
   get "/donate/raise_donate" => "donate#index"
 
   get "/donate/raise_donate_admin" => "donate#index_admin"
+
+  get "/donate/raisedonate_admin" => "donate#raisedonate_admin"
   
   get "/recruitment" => "home#recruitment"
   
