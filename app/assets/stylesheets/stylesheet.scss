@@ -4,20 +4,54 @@
 body {
     margin: 0
 }
+
 a {
     text-decoration: none;
     color: black;
 }
+
 h1 {
     font-weight: 100;
 }
+
 header {
-    background-color: rgba(39, 212, 160, 0.9);
+    background-color: rgb(241, 241, 241);
+    color: fff;
     height: 66px;
     width: 100%;
     position: fixed;
+    top: 0px;
     z-index: 10;
+    border-bottom: 1px solid rgb(202, 202, 202);
 }
+
+.header-list a {
+    list-style: none;
+    float: right;
+    padding: 0px 20px;
+    display: block;
+    line-height: 66px;
+    color: rgb(77, 77, 77);
+    position: relative;
+}
+
+.header-list a:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.header-logo {
+    color: rgb(0, 150, 236);
+    font-size: 32px;
+    float: left;
+    padding: 0px 40px;
+    line-height: 66px;
+}
+
+.header-search {
+    float: left;
+    padding: 20px 20px 20px 100px;
+}
+
 .community-header {
     background-color: rgba(231, 155, 41, 0.9);
     height: 66px;
@@ -25,6 +59,7 @@ header {
     position: fixed;
     z-index: 10;
 }
+
 .aid-header {
     background-color: rgba(209, 52, 73, 0.9);
     height: 66px;
@@ -32,14 +67,7 @@ header {
     position: fixed;
     z-index: 10;
 }
-.header-logo {
-    color: seashell;
-    font-size: 32px;
-    float: left;
-    padding: 0px 40px;
-    line-height: 66px;
-    position: relative;
-}
+
 #logo-menu {
     display: none;
     float: left;
@@ -64,43 +92,35 @@ header {
         padding-left: 40px;
     }
 }
+
 #search {
     background-color: rgb(255, 255, 255);
     height: 10px;
     padding: 8px;
     float: left;
-    position:relative;
+    position: relative;
     top: 18px;
-    }
+}
+
 #kensaku {
     color: gray;
-    font-size:20px;
+    font-size: 20px;
     border: none;
     background: none;
-    height:66px;
+    height: 66px;
     float: left;
-    position:relative;
+    position: relative;
     left: -32px;
 }
+
 #kensaku :hover {
     color: rgba(39, 212, 160, 0.9);
 }
-.header-list a {
-    color: seashell;
-    list-style: none;
-    float: right;
-    padding: 0px 20px;
-    display: block;
-    line-height: 66px;
-    position: relative;
-    bottom: 16px;
-}
-.header-list a:hover {
-    background-color: rgba(255, 255, 255, 0.5);
-}
+
 .donate {
-    position:relative
+    position: relative
 }
+
 .donate-menu {
     display: none;
     float: none;
@@ -113,14 +133,15 @@ header {
         width: 200px;
         text-align: center;
     }
-    
     a:hover {
         background-color: rgba(255, 79, 117, 0.5);
     }
 }
+
 .main {
     width: 100%;
 }
+
 .flash {
     padding: 10px 0;
     color: white;
@@ -132,13 +153,15 @@ header {
     width: 100%;
     border-radius: 0 0 2px 2px;
     font-size: 14px;
-  }
+}
+
 .test {
     height: 1000px;
     text-align: center;
     font-size: 100px;
     padding-top: 100px;
 }
+
 .top-wrapper {
     background-image: url(https://fh1w93s8iw-flywheel.netdna-ssl.com/wp-content/uploads/2020/04/coinjar-1024x480.jpg);
     background-size: cover;
@@ -148,16 +171,19 @@ header {
     position: relative;
     bottom: 10px;
 }
+
 .container {
     width: 100%;
-    color:white;
+    color: white;
     opacity: 1;
     padding-top: 80px;
 }
+
 .project-container {
     height: 1000px;
     padding-top: 100px;
 }
+
 .project-show-item {
     padding: 0px 0px 30px 0px;
     background-color: white;
@@ -171,35 +197,42 @@ header {
         margin: 20px 0;
     }
 }
+
 .project-time {
     color: #8899a6;
     margin-bottom: 10px;
 }
+
 .project-menus {
     float: right;
-    a, input {
+    a,
+    input {
         color: #8899a6;
         text-decoration: underline;
         font-size: 14px;
         padding: 0px 20px 0px 20px;
     }
 }
+
 .login-container {
     width: 100%;
-    color:white;
+    color: white;
     opacity: 1;
     padding-top: 80px;
     height: 870px;
 }
+
 .container h1 {
     font-size: 45px;
     letter-spacing: 10px;
     padding: 40px;
     margin: 0px;
 }
+
 .container p {
     padding: 5px 20px;
 }
+
 .login {
     max-width: 420px;
     height: 770px;
@@ -212,6 +245,7 @@ header {
     border: 1px solid #e4e4e4;
     background-color: #F6F8FA;
 }
+
 .login-input {
     h2 {
         max-width: 338px;
@@ -232,12 +266,14 @@ header {
         padding-right: 41px;
     }
 }
+
 #password {
     width: 330px;
     margin: 0 41px 20px 41px;
     padding: 15px;
     background-color: white;
 }
+
 .checkbox {
     width: 338px;
     text-align: center;
@@ -245,6 +281,7 @@ header {
     margin: 0px 0px 20px 0px;
     font-size: 12px;
 }
+
 .login-btn-wrapper {
     height: 330px;
     margin: 0px auto;
@@ -254,17 +291,21 @@ header {
         font-size: 10px;
     }
 }
+
 .signup-link {
     padding-top: 20px;
 }
+
 form input[type="submit"] {
     border: none;
     cursor: pointer;
 }
+
 input {
     background-color: transparent;
     outline-width: 0;
 }
+
 .form {
     max-width: 600px;
     margin: 0 auto;
@@ -298,19 +339,23 @@ input {
         float: right;
     }
 }
+
 .form-heading {
     font-weight: 300;
     font-size: 48px;
     color: #bcc8d4;
 }
+
 .form-body {
     margin: 30px;
     padding: 30px;
     height: 250px;
 }
+
 .form-error {
     color: #ff4d75;
-  }
+}
+
 .edit-container {
     max-width: 600px;
     margin: 0 auto;
@@ -318,10 +363,12 @@ input {
     padding-left: 15px;
     padding-right: 15px;
     clear: both;
-  }
+}
+
 .btn-wrapper {
     margin: 20px 0px;
 }
+
 .btn1 {
     padding: 8px 24px;
     color: white;
@@ -331,6 +378,7 @@ input {
     transition: all 1s;
     box-shadow: 3px 3px saddlebrown;
 }
+
 .btn {
     padding: 8px 24px;
     color: white;
@@ -339,16 +387,19 @@ input {
     border-radius: 5px;
     box-shadow: 3px 3px black;
 }
+
 .login-submit {
     background-color: #239b76;
     margin-bottom: 20px;
 }
+
 .rotateplace {
     padding-top: 100px;
     height: 100px;
     text-align: center;
     width: 100%;
 }
+
 .adcontainer {
     padding-top: 200px;
     height: 150px;
@@ -356,10 +407,12 @@ input {
     text-align: center;
     margin: auto;
 }
+
 .submit-project {
     height: 1000px;
     padding: 100px 30px 30px 30px;
 }
+
 .projects-edit textarea {
     font-size: 20px;
     padding: 10px;
@@ -367,7 +420,8 @@ input {
     margin: 0 auto;
     border: 1px solid rgb(216, 218, 223);
     resize: none;
-  }
+}
+
 .hot-project {
     padding: 20px 0px;
     width: 100%;
@@ -378,22 +432,27 @@ input {
         display: block;
     }
 }
+
 .popular-project {
     height: 300px;
     width: 100%;
     text-align: center;
 }
+
 .resent-project {
     height: 300px;
     width: 100%;
     text-align: center;
 }
+
 .playad {
     background-color: #239b76;
 }
+
 .btn:hover {
     opacity: 1;
 }
+
 .btn:active {
     box-shadow: none;
     position: relative;
@@ -401,9 +460,11 @@ input {
     bottom: 3px;
     transition: all 0s;
 }
+
 .btn1:hover {
     opacity: 1;
 }
+
 .btn1:active {
     box-shadow: none;
     position: relative;
@@ -411,58 +472,228 @@ input {
     bottom: 3px;
     transition: all 0s;
 }
+
 .signup {
     background-color: #239b76;
 }
+
 .facebook {
     background-color: #3b5998;
     margin-right: 10px;
 }
+
 .twitter {
     background-color: #55acee;
 }
+
 .fab {
     float: left;
     font-size: 15px;
 }
+
 .fas {
     float: left;
     font-size: 15px;
 }
+
 footer {
     background-color: rgb(46, 55, 63);
     height: 150px;
     width: 100%;
 }
+
 .footer-logo {
-    color:rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
     font-size: 32px;
     float: left;
     padding: 0px 40px;
     line-height: 150px;
 }
+
 .footer-list ul {
     margin: 0;
     height: 150px;
 }
+
 .footer-list {
     float: right;
 }
+
 .footer-list a {
-    color:rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
 }
+
 .footer-list l {
     list-style: none;
     padding: 19.5px 20px 9.75px 0px;
     display: block;
 }
+
 .footer-list li {
     list-style: none;
     padding: 9.75px 20px 9.75px 0px;
     display: block;
 }
+
 .footer-list lis {
     list-style: none;
     padding: 9.75px 20px 19.5px 0px;
     display: block;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Open Sans", sans-serif;
+}
+
+.blogs {
+    position: absolute;
+    top: 32%;
+    transform: translateY(-50%);
+}
+
+.blog {
+    overflow: hidden;
+    position: relative;
+    height: 100%;
+    cursor: pointer;
+}
+
+.blog img {
+    width: 100%;
+    height: 100%;
+}
+
+.blog-description {
+    position: absolute;
+    bottom: -40px;
+    background: #424242ca;
+    width: 100%;
+    padding: 40px;
+    transition: .3s linear;
+}
+
+.blog:hover .blog-description {
+    bottom: 0;
+}
+
+.categorie {
+    display: inline-block;
+    color: #50befd;
+    font-size: 18px;
+    position: relative;
+    padding: 0 22px;
+}
+
+.categorie::before {
+    content: '';
+    position: absolute;
+    width: 14px;
+    height: 2px;
+    background: #50befd;
+    left: 0;
+    top: 13px;
+}
+
+.categorie::after {
+    content: '';
+    position: absolute;
+    width: 14px;
+    height: 2px;
+    background: #50befd;
+    right: 0;
+    top: 13px;
+}
+
+.title {
+    font-weight: 500;
+    margin: 5px 0;
+}
+
+.date {
+    font-style: italic;
+    color: #50befd;
+    margin-bottom: 20px;
+}
+
+.btn {
+    display: inline-block;
+    color: #50befd;
+    text-decoration: none;
+    border: 1px solid #50befd;
+    padding: 6px 20px;
+    opacity: 0;
+    transition: .3s linear;
+}
+
+.blog:hover .btn {
+    opacity: 1;
+}
+
+.btn:hover {
+    color: #fff;
+    background: #50befd;
+}
+
+.owl-stage {
+    display: flex !important;
+}
+
+.owl-carousel {
+    top: 300px;
+}
+
+.main-container {
+    background-color: rgb(241, 241, 241);
+    flex: auto;
+    padding: 30px;
+    padding-top: 150px;
+    min-width: 10px;
+}
+
+.main-container .box {
+    padding: 30px 0;
+}
+
+.main-container .box+.box {
+    border-top: 3px solid rgb(182, 182, 182);
+}
+
+.list-con .img {
+    width: 100%;
+    background-color: rgb(92, 92, 92);
+}
+
+.list-con .img:before {
+    content: "";
+    display: block;
+    width: 100%;
+    padding-top: 75%;
+}
+
+.list-con {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -12px;
+}
+
+.list-con li {
+    padding: 12px;
+    background-color: rgb(241, 241, 241);
+    width: 25%;
+}
+
+.sab p {
+    float: left;
+    padding: 0 10px 0 10px;
+    font-size: 14px;
+    color: rgb(83, 83, 83);
+}
+
+.ttl {
+    font-size: 18px;
+    font-family: NOW-GM;
+    font-weight: 550;
+    padding-top: 10px;
 }

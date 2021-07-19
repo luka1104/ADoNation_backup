@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_08_085602) do
+ActiveRecord::Schema.define(version: 2021_06_08_065538) do
 
   create_table "donates", force: :cascade do |t|
     t.string "title"
@@ -18,14 +18,6 @@ ActiveRecord::Schema.define(version: 2021_06_08_085602) do
     t.text "body"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "images", force: :cascade do |t|
-    t.string "image_url"
-    t.integer "donate_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["donate_id"], name: "index_images_on_donate_id"
   end
 
   create_table "likes", force: :cascade do |t|
@@ -43,7 +35,7 @@ ActiveRecord::Schema.define(version: 2021_06_08_085602) do
   end
 
   create_table "projects", force: :cascade do |t|
-    t.text "content"
+    t.string "title"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -58,5 +50,4 @@ ActiveRecord::Schema.define(version: 2021_06_08_085602) do
     t.boolean "admin", default: false
   end
 
-  add_foreign_key "images", "donates"
 end
