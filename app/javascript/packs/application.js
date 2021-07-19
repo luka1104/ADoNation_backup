@@ -10,8 +10,9 @@ import "channels"
 import "jquery"
 import "test.js"
 import "index.js"
+import "owl.carousel2";
+import "owl.carousel2/dist/assets/owl.carousel.css";
 
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
-

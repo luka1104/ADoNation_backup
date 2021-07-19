@@ -1,4 +1,4 @@
-document.addEventListener("turbolinks:load", function () {
+document.addEventListener("turbolinks:load", function() {
     console.log("test");
 
     $('#logo').hover(
@@ -37,5 +37,16 @@ document.addEventListener("turbolinks:load", function () {
     $('#donate-modal-cancel').click(function() {
         $('#donate-input-modal').fadeOut();
         $('#donate-edit-modal').show();
+    });
+
+    $(".owl-carousel").owlCarousel({
+        items: 2,
+        margin: 20,
+        loop: true,
+        center: true,
+        dots: false,
+        autoplay: true,
+        autoplayTimeout: 5000,
+        autoplayHoverPause: true
     });
 });
