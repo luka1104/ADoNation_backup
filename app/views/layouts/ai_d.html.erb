@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ADoNation-AiD-</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+  </head>
+
+  <body>
+        <div class="aid-header">
+            <div id="logo">
+                <a href="/aid" class="header-logo">ADoNation-AiD-</a>
+                <div id="logo-menu">
+                    <li><a href="/aid" class="menu-text">ADoNation-AiD-</a></li>
+                    <li class="logo-ado"><a href="/" class="menu-text">ADoNation</a></li>
+                    <li class="logo-com"><a href="/community" class="menu-text">ADoNation-Community-</a></li>
+                </div>
+            </div>
+            <form action="/projects" method="get">
+             <input id="search" id="s" name="s" type="text" placeholder="キーワード検索"/>
+             <button type="submit" id="kensaku"><i class="fas fa-search"></i></button>
+            </form>
+                <div class="header-list">
+                <% if @current_user %>
+                    <ul>
+                        <li><%= link_to(@current_user.name ,"/aid/users/#{@current_user.id}") %></li>
+                        <li><%= link_to("ログアウト","/logout",{method: "post"}) %></li>
+                        <li class="donate">
+                            <a href="#">支援する</a>
+                            <ul class="donate-menu">
+                                <a href="/choose_ad_support" class="donate-text">mite支援</a>
+                                <a href="/clicksupport" class="donate-text">タップde支援</a>
+                            </ul>
+                        </li>
+                        <li><%= link_to("プロジェクトを掲載する","/newproject") %></li>
+                        <li><%= link_to("初めての方へ","/first") %></li>
+                    </ul>
+                <% else %>
+                    <ul>
+                        <li><%= link_to("新規登録","/signup") %></li>
+                        <li><%= link_to("ログイン","/login") %></li>
+                        <li class="donate">
+                            <a href="#">支援する</a>
+                            <ul class="donate-menu">
+                                <a href="/ad_support" class="donate-text">mite支援</a>
+                                <a href="/clicksupport_ano" class="donate-text">タップde支援</a>
+                            </ul>
+                        </li>
+                        <li><%= link_to("プロジェクトを掲載する","/newproject") %></li>
+                        <li><%= link_to("初めての方へ","/first") %></li>
+                    </ul>
+                <% end %>
+                </div>
+        </div>
+        <% if flash[:notice] %>
+            <div class="flash">
+                <%= flash[:notice] %>
+            </div>
+        <% end %>
+    <%= yield %>
+        <footer>
+            <a href="/" class="footer-logo">ADoNation</a>
+            <div class="footer-list">
+                <ul>
+                    <l><%= link_to("会社概要","/aboutus") %></l>
+                    <li><%= link_to("採用","/recruitment") %></li>
+                    <lis><%= link_to("お問い合わせ","/contact") %></lis>
+                </ul>
+            </div>
+        </footer>
+  </body>
+</html>

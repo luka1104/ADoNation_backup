@@ -1,0 +1,23 @@
+<body> 
+    <main>
+        <div class="signup-container">
+            <div class="sign-up">
+                <%= form_tag("/users/#{@user.id}/update",{multipart: true}) do %>
+                    <div class="login-input">
+                        <h2>登録情報の編集</h2>
+                        <p>ユーザー名</p>
+                        <input id="userid" name="name" type="text" placeholder="ユーザー名" value="<%= @user.name %>">
+                        <p>プロフィール画像</p>
+                        <input id="image-holder" name="image" type="file">
+                        <p>メールアドレス</p>
+                        <input id="userid" name="email" type="text" placeholder="メールアドレス" value="<%= @user.email %>">
+                        <input type="submit" class="long-btn login-submit" value="編集内容を送信">
+                        <%= link_to("/users/#{@user.id}/destroy", {method:"post"}) do %>
+                            <input type="submit" class="long-btn login-submit" value="アカウントを削除">
+                        <% end %>
+                    </div>
+                <% end %>
+            </div>
+        </div>
+    </main>
+</body>

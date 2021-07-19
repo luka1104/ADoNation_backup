@@ -1,0 +1,197 @@
+// Place all the styles related to the community controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+/* reset ================================ */
+* {
+    box-sizing: border-box;
+}
+  
+ul, li {
+    list-style-type: none;
+}
+  
+a {
+    text-decoration: none;
+}
+
+.container {
+      min-height: 1000px;
+}
+  
+input {
+    background-color: transparent;
+    outline-width: 0;
+}
+  
+form input[type="submit"] {
+    border: none;
+    cursor: pointer;
+}
+.posts-container {
+    max-width: 600px;
+    margin: 0px auto;
+    padding-top: 100px;
+    padding-left: 15px;
+    padding-right: 15px;
+    clear: both;
+}
+.posts-main {
+    top: 64px;
+    width: 100%;
+    height: auto;
+    min-height: 700px;
+    background-color: #f5f8fa;
+}
+/* posts/index ================================ */
+.posts-index-item {
+    padding: 20px 30px;
+    background-color: white;
+    overflow: hidden;
+    box-shadow: 0 2px 6px #c1ced7;
+    text-align: center;
+    text-decoration: none;
+    width: 500px;
+    margin: 0 auto;
+}
+  
+.post-left img {
+    width: 50px;
+    height: 50px;
+    border-radius: 40%;
+    box-shadow: 0 2px 6px #c1ced7;
+    object-fit: cover;
+}
+  
+.post-user-name a {
+    font-weight: 600;
+}
+  
+.post-user-name a:hover {
+    color: #3ecdc6;
+}
+  
+.post-left {
+    float: left;
+    width: 10%;
+}
+  
+.post-right {
+    float: left;
+    width: 90%;
+    padding-left: 25px;
+    text-align: left;
+}
+  
+.post-create {
+      margin: 0 auto;
+      text-align: center;
+      padding-top: 50px;
+}
+  
+  /* posts/show ================================ */
+.posts-show form {
+    display: inline;
+}
+  
+.posts-show-item {
+    padding: 30px;
+    background-color: white;
+    box-shadow: 0 2px 6px #c1ced7;
+    overflow: hidden;
+}
+  
+.posts-show-item img {
+    width: 60px;
+    height: 60px;
+    border-radius: 40%;
+    box-shadow: 0 2px 6px #c1ced7;
+    vertical-align: middle;
+    object-fit: cover;
+}
+  
+.posts-show-item .post-user-name a {
+    vertical-align: middle;
+    font-size: 24px;
+    margin-left: 15px;
+}
+  
+.posts-show-item p {
+    font-size: 24px;
+    margin: 20px 0;
+}
+  
+.post-time {
+    color: #8899a6;
+    margin-bottom: 10px;
+}
+  
+.post-menus {
+    float: right;
+}
+  
+.post-menus a, .post-menus input {
+    color: #8899a6;
+    text-decoration: underline;
+    font-size: 14px;
+}
+
+.post-user-name a {
+    font-weight: 600;
+}
+  
+.post-user-name a:hover {
+    color: #3ecdc6;
+}
+  /* posts/new ================================ */
+.posts-new {
+    height: 1000px;
+}
+.posts-new textarea {
+    font-size: 20px;
+    padding: 10px;
+    min-height: 140px;
+    border: 1px solid rgb(216, 218, 223);
+    resize: none;
+}
+  
+.posts-new textarea::-webkit-input-placeholder {
+    font-size: 24px;
+    opacity: 0.5;
+}
+  
+.form {
+    height: 320px;
+}
+
+.form-body {
+    height: 300px;
+}
+  
+.like-btn{
+    color: #8899a6;
+}
+  
+.like-btn-unlike{
+    color: #ff2581;
+}
+  
+.posts-show-item .fa {
+    font-size: 16px;
+    margin-right: 3px;
+}
+.post-new-modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 100;
+    padding-top: 100px;
+    display: none;
+}
+#modal-cancel {
+    padding: 5px;
+    color: #8899a6;
+    float: right;
+}

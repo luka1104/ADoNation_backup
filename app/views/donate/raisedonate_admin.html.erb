@@ -1,0 +1,14 @@
+<div class="admin-donate">
+    <%= form_tag("/donate/create") do %>
+        <div class="admin-donate-input">
+            <h2>新規プロジェクト情報入力画面</h2>
+            <p>プロジェクト名</p>
+            <input id="donatetitle" name="title" type="text" placeholder="プロジェクト名" value="<%= @title %>">
+            <p>プロジェクト本文</p>
+            <div class="form-body">
+                <textarea name="body"></textarea>
+                <input type="submit" class="long-btn login-submit" value="送信">
+            </div>
+        </div>
+    <% end %>
+</div>

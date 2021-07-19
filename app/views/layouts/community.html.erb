@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ADoNation-Community-</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+  </head>
+
+  <body>
+        <div class="community-header">
+            <div id="logo">
+                <a href="/community" class="header-logo">ADoNation-Community-</a>
+                <div id="logo-menu">
+                    <li><a href="/community" class="menu-text">ADoNation-Community-</a></li>
+                    <li class="logo-ado"><a href="/" class="menu-text">ADoNation</a></li>
+                    <li class="logo-aid"><a href="/aid" class="menu-text">ADoNation-AiD-</a></li>
+                </div>
+            </div>
+                <div class="header-list">
+                <% if @current_user %>
+                    <ul>
+                        <li><%= link_to(@current_user.name ,"/community/users/#{@current_user.id}") %></li>
+                        <li><%= link_to("ログアウト","/logout",{method: "post"}) %></li>
+                        <li><%= link_to("ユーザー一覧","/users") %></li>
+                        <li><%= link_to("コミュニティ","/community") %></li>
+                        <li><%= link_to("プロジェクトを掲載する","/newproject") %></li>
+                        <li><%= link_to("初めての方へ","/first") %></li>
+                    </ul>
+                <% else %>
+                    <ul>
+                        <li><%= link_to("新規登録","/signup") %></li>
+                        <li><%= link_to("ログイン","/login") %></li>
+                        <li><%= link_to("ユーザー一覧","/users") %></li>
+                        <li><%= link_to("コミュニティ","/community") %></li>
+                        <li><%= link_to("プロジェクトを掲載する","/newproject") %></li>
+                        <li><%= link_to("初めての方へ","/first") %></li>
+                    </ul>
+                <% end %>
+                </div>
+        </div>
+        <% if flash[:notice] %>
+            <div class="flash">
+                <%= flash[:notice] %>
+            </div>
+        <% end %>
+    <%= yield %>
+        <footer>
+            <a href="/" class="footer-logo">ADoNation</a>
+            <div class="footer-list">
+                <ul>
+                    <l><%= link_to("会社概要","/aboutus") %></l>
+                    <li><%= link_to("採用","/recruitment") %></li>
+                    <lis><%= link_to("お問い合わせ","/contact") %></lis>
+                </ul>
+            </div>
+        </footer>
+  </body>
+</html>

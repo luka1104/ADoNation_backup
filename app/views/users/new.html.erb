@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>ADonation</title>
+        <link rel="stylesheet" href="cmn/css/stylesheet.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+    </head>
+    <body> 
+        <main>
+            <div class="signup-container">
+                <div class="sign-up">
+                <%= form_tag("/users/create") do %>
+                    <div class="login-input">
+                        <h2>新規会員登録</h2>
+                        <p>ユーザー名</p>
+                        <input id="userid" name="name" type="text" placeholder="ユーザー名" value="<%= @user.name %>">
+                        <p>メールアドレス</p>
+                        <input id="userid" name="email" type="text" placeholder="メールアドレス" value="<%= @user.email %>">
+                        <p>パスワード</p>
+                        <input id="password" name="password" type="password" placeholder="パスワード">
+                        <input type="submit" class="long-btn login-submit" value="新規会員登録">
+                    </div>
+                <% end %>
+                    <div class="login-input-option">
+                        <h3 class="or-separater">or</h3>
+                        <a href="/signup" class="sns-long-btn login-line">
+                            <i class="fas fa-plus"></i>
+                            LINEでアカウントで登録
+                        </a>
+                        <a href="https://www.facebook.com/" class="sns-long-btn login-facebook">
+                            <i class="fab fa-facebook-f"></i>
+                            Facebookでアカウントで登録
+                        </a>
+                        <a href="https://www.twitter.com/" class="sns-long-btn login-twitter">
+                            <i class="fab fa-twitter"></i>
+                             Twitterアカウントで登録
+                        </a>
+                        <a href="https://www.apple.com/" class="sns-long-btn login-apple">
+                            <i class="fab fa-apple"></i>
+                            Appleでサインアップ
+                        </a>
+                        <p>＊利用者の許可なく外部サービスに使用されることはありません</p>
+                    </div>
+                    <div class="signup-link">
+                        <%= link_to("すでにアカウントをお持ちの方はこちら","/login") %>    
+                    </div>
+                </div>
+            </div>
+        </main>
+    </body>
+</html>

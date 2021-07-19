@@ -1,0 +1,12 @@
+<div class="admin-donate">
+    <% @donates.each do |donate| %>
+      <div class="posts-index-item">
+        <div class="post-right">
+          <%= link_to(donate.title, "/donate/#{donate.id}") %>
+        </div>
+      </div>
+    <% end %>
+    <div>
+      <%= link_to("新規プロジェクト","/donate/raisedonate_admin") %>
+    </div>
+</div>
