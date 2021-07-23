@@ -1,5 +1,16 @@
 <body>
     <div class="blogs owl-carousel">
+        <% @donates.each do |donate| %>
+            <div class="blog"> 
+                <img src="<%= "/donate_images/#{donate.donate_image}" %>" alt="">
+                <div class="blog-description">
+                    <div class="categorie"><%= donate.title %></div>
+                    <h2 class="title"><%= donate.body %></h2>
+                    <div class="date"><%= donate.created_at %></div>
+                    <div class="btn"><%= link_to("ReadMore", "/donate/#{donate.id}") %></div>
+                </div>
+            </div>
+        <% end %>
         <div class="blog">
             <img src="/assets/1.jpg" alt="">
             <div class="blog-description">
@@ -44,45 +55,23 @@
     <div class="main-container">
         <div class="box hot">
             <ul class="list-con">
-                <li>
-                    <article>
-                        <div class="img"></div>
-                        <div class="text">
-                            <div class="ttl">支援して！</div>
-                            <div class="sab">
-                                <p class="kinngaku">現在 2251円</p>
-                                <p class="siennsya">支援者 17人</p>
-                                <p class="nissuu">残り 34日</p>
-                            </div>
-                        </div>
-                    </article>
-                </li>
-                <li>
-                    <article>
-                        <div class="img"></div>
-                        <div class="text">
-                            <div class="ttl">支援して！</div>
-                            <div class="sab">
-                                <p class="kinngaku">現在 2251円</p>
-                                <p class="siennsya">支援者 17人</p>
-                                <p class="nissuu">残り 34日</p>
-                            </div>
-                        </div>
-                    </article>
-                </li>
-                <li>
-                    <article>
-                        <div class="img"></div>
-                        <div class="text">
-                            <div class="ttl">支援して！</div>
-                            <div class="sab">
-                                <p class="kinngaku">現在 2251円</p>
-                                <p class="siennsya">支援者 17人</p>
-                                <p class="nissuu">残り 34日</p>
-                            </div>
-                        </div>
-                    </article>
-                </li>
+                <% @donates.each do |donate| %>
+                    <li>
+                        <%= link_to("/donate/#{donate.id}") do %>
+                            <article class="project-list-link">
+                                <div class="img"></div>
+                                <div class="text">
+                                    <div class="ttl"><%= donate.title %></div>
+                                    <div class="sab">
+                                        <p class="kinngaku">現在 2251円</p>
+                                        <p class="siennsya">支援者 17人</p>
+                                        <p class="nissuu">残り 34日</p>
+                                    </div>
+                                </div>
+                            </article>
+                        <% end %>
+                    </li>
+                <% end %>
                 <li>
                     <article>
                         <div class="img"></div>

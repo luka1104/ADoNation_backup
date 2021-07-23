@@ -541,6 +541,10 @@ footer {
     display: block;
 }
 
+
+
+
+
 * {
     margin: 0;
     padding: 0;
@@ -551,6 +555,7 @@ footer {
     position: absolute;
     top: 32%;
     transform: translateY(-50%);
+    width: 100%;
 }
 
 .blog {
@@ -696,4 +701,11 @@ footer {
     font-family: NOW-GM;
     font-weight: 550;
     padding-top: 10px;
+}
+.project-list-link {
+    opacity: 1;
+    transition: .3s linear;
+}
+.project-list-link:hover {
+    opacity: 0.9;
 }

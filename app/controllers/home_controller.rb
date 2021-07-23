@@ -2,6 +2,8 @@ class HomeController < ApplicationController
   before_action :authenticate_user,{only:[:choose_ad]}
 
   def index
+    @donate = Donate.find_by(id: params[:id])
+    @donates = Donate.all.order(created_at: :desc)
   end
   
   def first

@@ -40,7 +40,7 @@ document.addEventListener("turbolinks:load", function() {
     });
 
     $(".owl-carousel").owlCarousel({
-        items: 2,
+        items: 4,
         margin: 20,
         loop: true,
         center: true,

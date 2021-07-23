@@ -9,13 +9,14 @@ class DonateController < ApplicationController
   end
 
   def raisedonate_admin
+    @donate = Donate.find_by(id: params[:id])
   end
 
   def new
     @donate = Donate.new
   end
 
-  def preview
+  def donate_show
     @donate = Donate.find_by(id: params[:id])
   end
   
@@ -47,7 +48,7 @@ class DonateController < ApplicationController
     @donate.body = params[:body]
     if params[:donate_image]
       image = params[:donate_image]
-      @donate.donate_image = "donate_image.#{@user.id}.jpg"
+      @donate.donate_image = "donate_image.#{@donate.id}.jpg"
       File.binwrite("public/donate_images/#{@donate.donate_image}", image.read)
     end
     if @donate.save
@@ -57,7 +58,7 @@ class DonateController < ApplicationController
       @donate.errors.full_messages.each do |message|
         flash[:notice] = "#{message}"
       end
-      render("donate/preview")
+      render("donate/donate_show")
     end
   end
 

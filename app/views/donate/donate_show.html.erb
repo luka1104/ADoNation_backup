@@ -1,0 +1,44 @@
+<body>   
+    <main>
+        <div class="project-container">
+            <div class="project-show-item">
+                <div>
+                    <p>
+                        <%= @donate.title %><i id="donate-edit-modal" class="far fa-edit"></i>
+                    </p>
+                    <div id="donate-input-modal">
+                        <i id="donate-modal-cancel" class="fa fa-2x fa-times"></i>
+                        <div class="donate-edit">
+                            <%= form_tag("/donate/#{@donate.id}/update",{multipart: true}) do |form| %>
+                                <div class="login-input">
+                                    <h2>プロジェクト情報の編集</h2>
+                                    <p>プロジェクト名</p>
+                                    <input id="userid" name="title" type="text" placeholder="プロジェクト名" value="<%= @donate.title %>">
+                                    <p>プロジェクト画像</p>
+                                    <input id="image-holder" name="donate_image" type="file">
+                                    <p>本文</p>
+                                    <input id="userid" name="body" type="text" placeholder="本文" value="<%= @donate.body %>">
+                                    <input type="submit" class="long-btn login-submit" value="編集内容を送信">
+                                    <%= link_to("/donate/#{@donate.id}/destroy", {method:"post"}) do %>
+                                        <input type="submit" class="long-btn login-submit" value="アカウントを削除">
+                                    <% end %>
+                                </div>
+                            <% end %>
+                        </div>
+                    </div>
+                </div>
+                <div class="donate-image">
+                    <img src="<%= "/donate_images/#{@donate.donate_image}" %>">
+                </div>
+                <div>
+                    <p>
+                        <%= @donate.body %>
+                    </p>
+                </div>
+                <div class="project-time">
+                    <%= @donate.created_at %>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>

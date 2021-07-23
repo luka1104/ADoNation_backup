@@ -18,9 +18,19 @@ Rails.application.routes.draw do
   
   get "/donate/raise_donate" => "donate#index"
 
+  get "/donate/new" => "donate#new"
+
   get "/donate/raise_donate_admin" => "donate#index_admin"
 
-  get "/donate/raisedonate_admin" => "donate#raisedonate_admin"
+  get "/donate/raisedonate_new" => "donate#raisedonate_admin"
+
+  get "/donate/:id" => "donate#donate_show"
+
+  post "/donate/create" => "donate#create"
+
+  post "donate/:id/update" => "donate#update"
+
+  post "donate/:id/destroy" => "donate#destroy"
   
   get "/recruitment" => "home#recruitment"
   
@@ -35,12 +45,6 @@ Rails.application.routes.draw do
   get "/projects/:id" => "home#show"
 
   post "/projects/create" => "home#create"
-
-  post "/donate/create" => "donate#create"
-
-  get "/donate/new" => "donate#new"
-
-  get "/donate/:id" => "donate#preview"
 
   get "/projects/:id/edit" => "home#edit"
 
