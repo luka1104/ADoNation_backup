@@ -102,3 +102,38 @@ input#file-upload-button {
 .fa-edit { 
     font-size: 20px;
 }
+
+.edit-header {
+    padding-top: 100px;
+    height: 300px;
+    h1 {
+        text-align: center;
+        padding-bottom: 40px;
+    }
+}
+.edit-percent {
+    position: absolute;
+    top: 110px;
+    right: 20px;
+}
+.edit-lists {
+    position: relative;
+    overflow: hidden;
+    ul {
+        position: relative;
+        left: 50%;
+        float: left;
+    }
+    li {
+        position: relative;
+        left: -50%;
+        float: left;
+        padding: 20px 60px;
+        text-align: center;
+        border-bottom: 1px solid #e4e4e4;
+    }
+}
+.footer-btn {
+    padding: 40px;
+    margin: 0 auto;
+}

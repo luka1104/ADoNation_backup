@@ -42,6 +42,30 @@ class DonateController < ApplicationController
     @donate = Donate.find_by(id: params[:id])
   end
 
+  def outline
+    @donate = Donate.find_by(id: params[:id])
+  end
+
+  def mainbody
+    @donate = Donate.find_by(id: params[:id])
+  end
+
+  def other
+    @donate = Donate.find_by(id: params[:id])
+  end
+
+  def perk
+    @donate = Donate.find_by(id: params[:id])
+  end
+
+  def visual
+    @donate = Donate.find_by(id: params[:id])
+  end
+
+  def certification
+    @donate = Donate.find_by(id: params[:id])
+  end
+
   def update
     @donate = Donate.find_by(id: params[:id])
     @donate.title = params[:title]

@@ -1,0 +1,47 @@
+<div class="edit-header">
+    <div class="edit-top">
+        <h1>プロジェクト編集</h1>
+        <div class="edit-percent">
+            <p>まだ申請できません</p>
+        </div>
+    </div>
+    <div class="edit-lists">
+        <ul>
+            <li><%= link_to("目標設定","/donate/#{@donate.id}/edit") %></li>
+            <li><%= link_to("概要","/donate/#{@donate.id}/edit/outline") %></li>
+            <li><%= link_to("ビジュアル","/donate/#{@donate.id}/edit/visual") %></li>
+            <li><%= link_to("本文","/donate/#{@donate.id}/edit/mainbody") %></li>
+            <li><%= link_to("リターン","/donate/#{@donate.id}/edit/perk") %></li>
+            <li><%= link_to("その他","/donate/#{@donate.id}/edit/other") %></li>
+            <li><%= link_to("本人確認","/donate/#{@donate.id}/edit/certification") %></li>
+        </ul>
+    </div>
+</div>
+<div class="edit-main">
+    <div class="edit-container">
+        <h1>必要な目標金額を設定しましょう</h1>
+        <div class="asp-money">
+            <p>目標金額</p>
+            <input type="number" placeholder="（例）10000">円
+        </div>
+        <div class="collect-type">
+            <p>募集方式</p>
+
+        </div>
+        <div class="end-date">
+            <p>募集終了日</p>
+            <input type="text" placeholder="（例）2022-01-04">
+            <div class="text-box">
+                <p>※ 期間が65日間以下のプロジェクトでは、成功率がより高くなっています。</p>
+                <p>※ プロジェクトの公開可能期間は、1日〜79日間となります。（All-or-Nothing方式の場合は1日〜59日間）</p>
+                <p>※ 2020-08-31を選択した場合、2020-08-31 23:59 に終了します。</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="edit-footer">
+    <div class="footer-btn">
+        <input type="submit" value="保存する">
+        <a href="#2">プレビュー</a>
+    </div>
+</div>
