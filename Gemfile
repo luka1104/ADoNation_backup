@@ -56,3 +56,8 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'bcrypt'
+
+gem 'wysiwyg-rails'
+
+gem 'actiontext'
+gem 'image_processing', '~> 1.2'

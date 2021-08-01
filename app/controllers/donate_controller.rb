@@ -66,6 +66,10 @@ class DonateController < ApplicationController
     @donate = Donate.find_by(id: params[:id])
   end
 
+  def donate_params
+    params.require(:donate).permit(:mainbody, :content)
+  end
+
   def update
     @donate = Donate.find_by(id: params[:id])
     @donate.title = params[:title]

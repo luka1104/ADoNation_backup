@@ -16,3 +16,5 @@ import "owl.carousel2/dist/assets/owl.carousel.css";
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+require("trix")
+require("@rails/actiontext")

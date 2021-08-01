@@ -19,22 +19,16 @@
 </div>
 <div class="edit-main">
     <div class="edit-container">
-        <h1>必要な目標金額を設定しましょう</h1>
+        <h1>あなたの想いを語り尽くしましょう</h1>
         <div class="asp-money">
-            <p>目標金額</p>
-            <input type="number" placeholder="（例）10000">円
-        </div>
-        <div class="collect-type">
-            <p>募集方式</p>
-
-        </div>
-        <div class="end-date">
-            <p>募集終了日</p>
-            <input type="text" placeholder="（例）2022-01-04">
-            <div class="text-box">
-                <p>※ 期間が65日間以下のプロジェクトでは、成功率がより高くなっています。</p>
-                <p>※ プロジェクトの公開可能期間は、1日〜79日間となります。（All-or-Nothing方式の場合は1日〜59日間）</p>
-                <p>※ 2020-08-31を選択した場合、2020-08-31 23:59 に終了します。</p>
+            <p>本文</p>
+                <%= form_with url: "/donate/#{@donate.id}/update" do |form| %>
+                    <div class="field">
+                        <%= form.rich_text_area :content %>
+                    </div>
+                <% end %>
+                <p>※ 行間をあけずに改行するには【 Shift + Enter 】を押してください。</p>
+                <p>※特定商取引法に基づく記載は、法人/個人問わず、すべてのプロジェクトオーナー様に義務付けられております。必ずご記入ください。</p>
             </div>
         </div>
     </div>
