@@ -18,8 +18,8 @@
     </div>
 </div>
 <div class="edit-main">
-    <div class="edit-container">
-        <h1>あなたのプロジェクトをわかりやすく伝えましょう</h1>
+    <div class="donate-edit-container">
+        <h1 class="edit-title">あなたのプロジェクトをわかりやすく伝えましょう</h1>
         <div class="asp-money">
             <p>タイトル</p>
             <input type="number" placeholder="（例）10000">円
@@ -39,7 +39,7 @@
 </div>
 <div class="edit-footer">
     <div class="footer-btn">
-        <input type="submit" value="保存する">
-        <a href="#2">プレビュー</a>
+        <input type="submit" class="edit-btn edit-submit" value="編集内容を送信">
+        <%= link_to("プレビュー","/donate/#{@donate.id}/preview", {class: "edit-btn preview-btn"}) %>
     </div>
 </div>

@@ -17,25 +17,25 @@
         </ul>
     </div>
 </div>
+<%= form_with url: "/donate/#{@donate.id}/update" do |form| %>
 <div class="edit-main">
-    <div class="edit-container">
-        <h1>あなたの想いを語り尽くしましょう</h1>
-        <div class="asp-money">
-            <p>本文</p>
-                <%= form_with url: "/donate/#{@donate.id}/update" do |form| %>
-                    <div class="field">
-                        <%= form.rich_text_area :content %>
+    <div class="donate-edit-container">
+        <h1 class="edit-title">あなたの想いを語り尽くしましょう</h1>
+        <div>
+            <p class="mainbody-title">本文 <span>*</span></p>
+                    <div class="donate-edit-field">
+                        <%= form.rich_text_area :mainbody, value: @donate.mainbody, class: "mainbody-area" %>
                     </div>
-                <% end %>
                 <p>※ 行間をあけずに改行するには【 Shift + Enter 】を押してください。</p>
-                <p>※特定商取引法に基づく記載は、法人/個人問わず、すべてのプロジェクトオーナー様に義務付けられております。必ずご記入ください。</p>
+                <p>※ 特定商取引法に基づく記載は、法人/個人問わず、すべてのプロジェクトオーナー様に義務付けられております。必ずご記入ください。</p>
             </div>
         </div>
     </div>
 </div>
 <div class="edit-footer">
     <div class="footer-btn">
-        <input type="submit" value="保存する">
-        <a href="#2">プレビュー</a>
+        <input type="submit" class="edit-btn edit-submit" value="編集内容を送信">
+        <%= link_to("プレビュー","/donate/#{@donate.id}/preview", {class: "edit-btn preview-btn"}) %>
     </div>
 </div>
+<% end %>

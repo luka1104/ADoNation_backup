@@ -62,6 +62,10 @@ class DonateController < ApplicationController
     @donate = Donate.find_by(id: params[:id])
   end
 
+  def preview
+    @donate = Donate.find_by(id: params[:id])
+  end
+
   def certification
     @donate = Donate.find_by(id: params[:id])
   end
@@ -74,6 +78,7 @@ class DonateController < ApplicationController
     @donate = Donate.find_by(id: params[:id])
     @donate.title = params[:title]
     @donate.body = params[:body]
+    @donate.mainbody = params[:mainbody]
     if params[:donate_image]
       image = params[:donate_image]
       @donate.donate_image = "donate_image.#{@donate.id}.jpg"

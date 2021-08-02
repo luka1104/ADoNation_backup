@@ -38,6 +38,8 @@ Rails.application.routes.draw do
 
   get "/donate/:id/edit/certification" => "donate#certification"
 
+  get "/donate/:id/preview" => "donate#preview"
+
   get "/donate/:id" => "donate#donate_show"
 
   post "/donate/create" => "donate#create"
@@ -49,7 +51,7 @@ Rails.application.routes.draw do
 
 
 
-  
+
   
   get "/recruitment" => "home#recruitment"
   
