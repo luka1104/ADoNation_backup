@@ -59,7 +59,7 @@ document.addEventListener("turbolinks:load", function() {
             var doch = $(document).innerHeight(); //ページ全体の高さ
             var winh = $(window).innerHeight(); //ウィンドウの高さ
             var bottom = doch - winh; //ページ全体の高さ - ウィンドウの高さ = ページの最下部位置
-            if (bottom - 160 <= $(window).scrollTop()) {
+            if (bottom - 173 <= $(window).scrollTop()) {
                 $('.footer-btn').removeClass('fixed');
                 }
             });

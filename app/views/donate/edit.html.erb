@@ -17,12 +17,13 @@
         </ul>
     </div>
 </div>
+<%= form_with(url: "/donate/#{@donate.id}/update", multipart: true) do |form| %>
 <div class="edit-main">
     <div class="donate-edit-container">
         <h1 class="edit-title">必要な目標金額を設定しましょう</h1>
         <div class="asp-money">
             <p>目標金額</p>
-            <input type="number" placeholder="（例）10000">円
+            <input name="asp_money" type="number" placeholder="（例）10000" value="<%= @donate.asp_money %>">円
         </div>
         <div class="collect-type">
             <p>募集方式</p>
@@ -30,7 +31,7 @@
         </div>
         <div class="end-date">
             <p>募集終了日</p>
-            <input type="text" placeholder="（例）2022-01-04">
+            <input name="end_date" type="number" placeholder="（例）2022-01-04" value="<%= @donate.end_date %>">
             <div class="text-box">
                 <p>※ 期間が65日間以下のプロジェクトでは、成功率がより高くなっています。</p>
                 <p>※ プロジェクトの公開可能期間は、1日〜79日間となります。（All-or-Nothing方式の場合は1日〜59日間）</p>
@@ -45,3 +46,4 @@
         <%= link_to("プレビュー","/donate/#{@donate.id}/preview", {class: "edit-btn preview-btn"}) %>
     </div>
 </div>
+<% end %>

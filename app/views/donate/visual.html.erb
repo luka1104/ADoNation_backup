@@ -17,16 +17,18 @@
         </ul>
     </div>
 </div>
+<%= form_with url: "/donate/#{@donate.id}/update" do |form| %>
 <div class="edit-main">
     <div class="donate-edit-container">
         <h1 class="edit-title">とびっきりキャッチーな写真をみせつけよう</h1>
         <div class="asp-money">
             <p>メイン画像</p>
-            <input type="number" placeholder="（例）10000">円
+            <%= form.file_field :donate_image, value: @donate.donate_image_url %>
+            <%= form.hidden_field :donate_image_cache %>
         </div>
         <div class="collect-type">
             <p>サブ画像</p>
-
+            <input id="image-holder" name="donate_image" type="file">
         </div>
         <div class="end-date">
             <p>動画</p>
@@ -49,3 +51,4 @@
         <%= link_to("プレビュー","/donate/#{@donate.id}/preview", {class: "edit-btn preview-btn"}) %>
     </div>
 </div>
+<% end %>

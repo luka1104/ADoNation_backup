@@ -17,16 +17,17 @@
         </ul>
     </div>
 </div>
+<%= form_with url: "/donate/#{@donate.id}/update" do |form| %>
 <div class="edit-main">
     <div class="donate-edit-container">
         <h1 class="edit-title">あなたのプロジェクトをわかりやすく伝えましょう</h1>
         <div class="asp-money">
             <p>タイトル</p>
-            <input type="number" placeholder="（例）10000">円
+            <input name="title" type="text" placeholder="プロジェクト名" value="<%= @donate.title %>">
         </div>
         <div class="collect-type">
             <p>概要文</p>
-
+            <input name="body" type="text" placeholder="概要文" value="<%= @donate.body %>">
         </div>
         <div class="end-date">
             <p>カテゴリー</p>
@@ -43,3 +44,4 @@
         <%= link_to("プレビュー","/donate/#{@donate.id}/preview", {class: "edit-btn preview-btn"}) %>
     </div>
 </div>
+<% end %>

@@ -9,6 +9,13 @@
     padding-right: 15px;
     clear: both;
 }
+.banner {
+    background-color: lightcoral;
+    height: 50px;
+    padding-top: 132px;
+    text-align: center;
+    color: ivory;
+}
 .admin-donate-input {
     h2 {
         max-width: 338px;
@@ -44,20 +51,220 @@
 //donate#show//
 .donate-project-container {
     min-height: 1000px;
-    padding-top: 100px;
+    background-color: #e4e4e4;
+    padding-top: 50px;
 }
-
-.donate-project-show-item {
-    padding: 0px 0px 30px 0px;
+.donate-top-container {
+    width: 80%;
+    margin: 0 auto;
+    height: 850px;
     background-color: white;
-    box-shadow: 0 2px 6px #c1ced7;
+}
+.project-base-top {
+    display: flex;
+    background-color: darkkhaki;
+    height: 400px;
+    width: 100%;
+}
+.donate-image {
+    display: flex;
+    background-color: yellow;
+    width: 70%;
+    height: 400px;
+    img {
+        width: 100%;
+    }
+}
+.project-info {
+    display: flex;
+    flex-direction: column;
+    background-color: darkgreen;
+    width: 30%;
+    height: 400px;
+    p {
+        float: left;
+        font-size: 20px;
+    }
+    h2 {
+        font-size: 30px;
+        float: right;
+    }
+    h1 {
+        font-size: 45px;
+        float: right;
+        font-weight: bold;
+    }
+}
+.status-money {
+    width: 100%;
+    padding: 20px;
+}
+.money-status {
+    font-size: 25px;
+    font-weight: bold;
+}
+.asp-money-show {
+    width: 100%;
+    padding: 0 20px 20px 20px;
+}
+.project-status-bar {
+    width: 100%;
+}
+.supporter-num {
+    width: 100%;
+    padding: 0 20px 20px 20px;
+}
+.date-remaining {
+    width: 100%;
+    padding: 0 20px 20px 20px;
+}
+.project-donate-btn {
+    text-align: center;
+    margin: 0 auto;
+}
+.project-base-down {
+    height: 450px;
+    width: 100%;
+    background-color: darkcyan;
+}
+.project-img-list {
+    height: 90px;
+    width: 100%;
+    background-color: darkblue;
+    img {
+        width: 15%;
+        height: 90px;
+        padding: 20px 20px;
+    }
+}
+.project-title {
+    padding: 0px 20px 10px 20px;
+    background-color: darkorange;
+    height: 60px;
+    h1 {
+        font-size: 32px;
+    }
+}
+.project-tag-list {
+    font-size: 15px;
+    padding: 10px 0;
+    height: 50px;
+    border-bottom: 1px solid #e4e4e4;
+    li {
+        float: left;
+        background-color: darkorchid;
+        padding: 0 20px;
+    }
+}
+.project-tag-other {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #e4e4e4;
+}
+.project-tag-info {
+    display: flex;
+    font-size: 15px;
+    padding: 10px 0;
+    height: 50px;
+    li {
+        float: left;
+        background-color: hotpink;
+        padding: 0 20px;
+    }
+    a {
+        width: 100%;
+    }
+}
+.project-link-sns {
+    display: flex;
+    font-size: 15px;
+    padding: 10px 0;
+    height: 50px;
+    li {
+        float: left;
+        background-color: lightseagreen;
+        padding: 0 20px;
+    }
+}
+.project-description {
+    padding: 20px;
+    height: 150px;
+    background-color: indianred;
+}
+.project-base-bottom {
+    display: flex;
+    height: 50px;
+    width: 100%;
+    justify-content: space-between;
+}
+.project-page-tab {
+    display: flex;
+    font-size: 20px;
+    height: 50px;
+    li {
+        float: left;
+        background-color: lightcyan;
+        padding: 0 20px;
+        line-height: 50px;
+    }
+}
+.project-likes {
+    display: flex;
+    background-color: lightgreen;
+    line-height: 50px;
+    width: 100px;
+    a {
+        margin: 0 auto;
+    }
+}
+.project-main-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 50px 0px 30px 0px;
     overflow: hidden;
     margin: 0 auto;
-    width: 500px;
+    width: 80%;
+    background-color: #e4e4e4;
     p {
         font-size: 24px;
         margin: 20px 0;
     }
+}
+.project-content-left {
+    flex-grow: 1;
+    width: 70%;
+    h3 {
+        padding: 0 0 10px 10px;
+    }
+}
+.project-mainbody {
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 2px 6px #c1ced7;
+    width: 95%;
+}
+.project-content-right {
+    flex-grow: 1;
+    width: 30%;
+    h3 {
+        padding: 0 0 10px 0;
+    }
+}
+.project-author {
+    width: 95%;
+    padding: 20px;
+    height: 500px;
+    background-color: white;
+    box-shadow: 0 2px 6px #c1ced7;
+    margin-bottom: 20px;
+}
+.project-perk {
+    width: 95%;
+    padding: 20px;
+    height: 500px;
+    background-color: white;
+    box-shadow: 0 2px 6px #c1ced7;
+    margin-bottom: 20px;
 }
 
 .donate-project-time {
