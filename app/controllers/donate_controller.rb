@@ -36,7 +36,11 @@ class DonateController < ApplicationController
       perk_price: params[:perk_price],
       perk_body: params[:perk_body],
       perk_image: params[:perk_image],
-      video_url: params[:video_url]
+      video_url: params[:video_url],
+      collect_type: params[:collect_type],
+      project_category: params[:project_category],
+      connection_area: params[:connection_area],
+      donate_tag: params[:donate_tag]
     )
     if @donate.save
       session[:donate_id] = @donate.id
@@ -64,6 +68,7 @@ class DonateController < ApplicationController
 
   def other
     @donate = Donate.find_by(id: params[:id])
+    @project_tag = ProjectTag.all
   end
 
   def perk
@@ -76,6 +81,7 @@ class DonateController < ApplicationController
 
   def preview
     @donate = Donate.find_by(id: params[:id])
+    @end_date_date = Date.today + @donate.end_date  
   end
 
   def certification
@@ -84,8 +90,6 @@ class DonateController < ApplicationController
 
   def end_date
     @donate = Donate.find_by(id: params[:id])
-    @date = date.today
-    @date_remaining = @donate.end_date - @date
   end
 
   def update
@@ -112,5 +116,5 @@ end
 
 private
 def donate_params
-  params.permit(:title, :body, :asp_money, :end_date, :perk_price, :perk_body, :video_url, :donate_image, :donate_image_sub, :donate_image_cache, :mainbody, :content)
+  params.permit(:title, :body, :asp_money, :end_date, :perk_price, :perk_body, :video_url, :donate_image, :donate_image_sub, :donate_image_cache, :mainbody, :content, :collect_type, :project_category, :connection_area, :donate_tag)
 end

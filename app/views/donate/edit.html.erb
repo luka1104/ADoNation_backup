@@ -27,11 +27,12 @@
         </div>
         <div class="collect-type">
             <p>募集方式</p>
-
+            <label><%= radio_button_tag "collect_type", "ALL-In", checked: ("ALL-In" == params[:collect_type]) %>ALL-In</label>
+            <label><%= radio_button_tag "collect_type", "ALL-or-Nothing", checked: ("ALL-or-Nothing" == params[:collect_type]) %>ALL-or-Nothing</label>
         </div>
         <div class="end-date">
             <p>募集終了日</p>
-            <input name="end_date" type="number" placeholder="（例）2022-01-04" value="<%= @donate.end_date %>">
+            <input name="end_date" type="number" placeholder="（例）60" value="<%= @donate.end_date %>">
             <div class="text-box">
                 <p>※ 期間が65日間以下のプロジェクトでは、成功率がより高くなっています。</p>
                 <p>※ プロジェクトの公開可能期間は、1日〜79日間となります。（All-or-Nothing方式の場合は1日〜59日間）</p>

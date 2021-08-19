@@ -50,7 +50,9 @@ Rails.application.routes.draw do
 
 
 
+  get "/projecttag/new" => "project_tags#index"
 
+  post "/projecttag/create" => "project_tags#create"
 
   
   get "/recruitment" => "home#recruitment"

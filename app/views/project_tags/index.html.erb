@@ -1,0 +1,13 @@
+<div class="test">
+    プロジェクトタグ
+    <%= form_with url: "/projecttag/create" do |form| %>
+    <div class="asp-money">
+        <p>タグを追加する</p>
+        <input type="text" name="tag" class="project-tag-input">
+        <input type="submit" class="edit-btn edit-submit" value="送信">
+    </div>
+    <% end %>
+    <% @project_tags.each do |project_tag| %>
+        <p><%= project_tag.tag %></p>
+    <% end %>
+</div>

@@ -27,6 +27,8 @@
                         <div class="date-remaining">
                             <p>残り日数</p>
                             <h2><%= @donate.end_date %></h2>
+                            <p>終了日</p>
+                            <h2><%= @end_date_date %></h2>
                         </div>
                         <div class="project-donate-btn preview-btn edit-btn">
                             <a href="#">寄付する</a>
@@ -42,7 +44,7 @@
                     </div>
                     <div class="project-tag-list">
                         <ul>
-                            <li><a href="#"># タグ１</a></li>
+                            <li><a href="#"># <%= @donate.donate_tag %></a></li>
                             <li><a href="#"># タグ２</a></li>
                             <li><a href="#"># タグ３</a></li>
                             <li><a href="#"># タグ４</a></li>
@@ -54,8 +56,8 @@
                     </div>
                     <div class="project-tag-other">
                         <ul class="project-tag-info">
-                            <li><a href="#"># カテゴリ</a></li>
-                            <li><a href="#"># 地域</a></li>
+                            <li><a href="#"># <%= @donate.project_category %></a></li>
+                            <li><a href="#"># <%= @donate.connection_area %></a></li>
                         </ul>
                         <ul class="project-link-sns">
                             <li><a href="#">facebook</a></li>
@@ -88,11 +90,10 @@
                 <div class="project-content-right">
                     <h3>プロジェクトオーナー</h3>
                     <div class="project-author">
-                        
+                        <%= @donate.collect_type %>
                     </div>
                     <h3>リターン</h3>
                     <div class="project-perk">
-
                     </div>
                 </div>
             </div>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_04_171852) do
+ActiveRecord::Schema.define(version: 2021_08_11_105103) do
 
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
@@ -50,6 +50,13 @@ ActiveRecord::Schema.define(version: 2021_08_04_171852) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "donate_project_tags", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "tag_id"
+    t.integer "donate_id"
+  end
+
   create_table "donates", force: :cascade do |t|
     t.string "title"
     t.string "donate_image"
@@ -63,6 +70,10 @@ ActiveRecord::Schema.define(version: 2021_08_04_171852) do
     t.string "perk_body"
     t.string "perk_image"
     t.string "video_url"
+    t.string "collect_type"
+    t.string "project_category"
+    t.string "connection_area"
+    t.text "donate_tag"
   end
 
   create_table "likes", force: :cascade do |t|
@@ -77,6 +88,12 @@ ActiveRecord::Schema.define(version: 2021_08_04_171852) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id"
+  end
+
+  create_table "project_tags", force: :cascade do |t|
+    t.string "tag"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "projects", force: :cascade do |t|
