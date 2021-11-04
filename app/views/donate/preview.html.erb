@@ -33,32 +33,157 @@
                         <div class="project-donate-btn preview-btn edit-btn">
                             <a href="#">寄付する</a>
                         </div>
+                        <div id="preview-edit-modal">
+                            <i class="far fa-edit"></i>
+                        </div>
+                        <div class="preview-edit-modal" id="preview-input-modal">
+                            <%= form_with(url: "/donate/#{@donate.id}/update", multipart: true) do |form| %>
+                            <div class="edit-main">
+                                <div class="donate-edit-container">
+                                    <h1 class="edit-title">必要な目標金額を設定しましょう</h1>
+                                    <div class="asp-money">
+                                        <p>目標金額</p>
+                                        <input name="asp_money" type="number" placeholder="（例）10000" value="<%= @donate.asp_money %>">円
+                                    </div>
+                                    <div class="end-date">
+                                        <p>募集終了日</p>
+                                        <input name="end_date" type="number" placeholder="（例）60" value="<%= @donate.end_date %>">
+                                        <div class="text-box">
+                                            <p>※ 期間が65日間以下のプロジェクトでは、成功率がより高くなっています。</p>
+                                            <p>※ プロジェクトの公開可能期間は、1日〜79日間となります。（All-or-Nothing方式の場合は1日〜59日間）</p>
+                                            <p>※ 2020-08-31を選択した場合、2020-08-31 23:59 に終了します。</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="edit-footer">
+                                <div class="footer-btn">
+                                    <input type="submit" class="edit-btn edit-submit" value="編集内容を送信">
+                                </div>
+                            </div>
+                            <% end %>
+                            <i id="preview-modal-cancel" class="fa fa-2x fa-times-circle preview-cancel"></i>
+                        </div>
                     </div>
                 </div>
                 <div class="project-base-down">
                     <div class="project-img-list">
-                        <%= image_tag(@donate.donate_image_url) if @donate.donate_image.present? %><%= @donate.donate_image %>
+                        <%= image_tag(@donate.donate_image_url) if @donate.donate_image.present? %>
+                        <i class="far fa-edit" id="preview2-edit-modal"></i>
+                    </div>
+                    <div class="preview2-edit-modal" id="preview2-input-modal">
+                        <%= form_with url: "/donate/#{@donate.id}/update" do |form| %>
+                            <div class="edit-main">
+                                <div class="donate-edit-container">
+                                    <h1 class="edit-title">とびっきりキャッチーな写真をみせつけよう</h1>
+                                    <div class="asp-money">
+                                        <p>メイン画像</p>
+                                        <%= form.file_field :donate_image, value: @donate.donate_image_url %>
+                                        <%= form.hidden_field :donate_image_cache %>
+                                    </div>
+                                    <div class="collect-type">
+                                        <p>サブ画像</p>
+                                        <input id="image-holder" name="donate_image" type="file">
+                                    </div>
+                                    <div class="end-date">
+                                        <p>動画</p>
+                                        <input type="text" placeholder="（例）2022-01-04">
+                                        <div class="text-box">
+                                            <p>※  画像の推奨サイズ<br>
+                                                ・横1200px 縦800px 程度<br>
+                                                ・比率 3:2<br>
+                                                ・容量 10メガバイトまで<br>
+                                                ・縦横の比率を揃えると見栄えがよくなります。</p>
+                                            <p>※ 画像の優先順位<br>
+                                                ・最大5枚まで登録でき、1枚目に設定した画像がメインの画像になります。</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="edit-footer">
+                                <div class="footer-btn">
+                                    <input type="submit" class="edit-btn edit-submit" value="編集内容を送信">
+                                </div>
+                            </div>
+                        <% end %>
+                        <i id="preview2-modal-cancel" class="fa fa-2x fa-times-circle preview-cancel"></i>
                     </div>
                     <div class="project-title">
-                        <h1><%= @donate.title %></h1>
+                        <h1><%= @donate.title %><i class="far fa-edit" id="preview3-edit-modal"></i></h1>
                     </div>
-                    <div class="project-tag-list">
-                        <ul>
-                            <li><a href="#"># <%= @donate.donate_tag %></a></li>
-                            <li><a href="#"># タグ２</a></li>
-                            <li><a href="#"># タグ３</a></li>
-                            <li><a href="#"># タグ４</a></li>
-                            <li><a href="#"># タグ５</a></li>
-                        </ul>
+                    <div class="preview3-edit-modal" id="preview3-input-modal">
+                        <%= form_with url: "/donate/#{@donate.id}/update" do |form| %>
+                            <div class="edit-main">
+                                <div class="donate-edit-container">
+                                    <h1 class="edit-title">あなたのプロジェクトをわかりやすく伝えましょう</h1>
+                                    <div class="asp-money">
+                                        <p>タイトル</p>
+                                        <input name="title" type="text" placeholder="プロジェクト名" value="<%= @donate.title %>">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="edit-footer">
+                                <div class="footer-btn">
+                                    <input type="submit" class="edit-btn edit-submit" value="編集内容を送信">
+                                </div>
+                            </div>
+                            <% end %>
+                        <i id="preview3-modal-cancel" class="fa fa-2x fa-times-circle preview-cancel"></i>
                     </div>
                     <div class="project-description">
-                        <h2><%= @donate.body %></h2>
+                        <h2><%= @donate.body %><i class="far fa-edit" id="preview4-edit-modal"></i></h2>
+                    </div>
+                    <div class="preview4-edit-modal" id="preview4-input-modal">
+                        <%= form_with url: "/donate/#{@donate.id}/update" do |form| %>
+                            <div class="edit-main">
+                                <div class="donate-edit-container">
+                                    <h1 class="edit-title">あなたのプロジェクトをわかりやすく伝えましょう</h1>
+                                    <div class="collect-type">
+                                        <p>概要文</p>
+                                        <input name="body" type="text" placeholder="概要文" value="<%= @donate.body %>">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="edit-footer">
+                                <div class="footer-btn">
+                                    <input type="submit" class="edit-btn edit-submit" value="編集内容を送信">
+                                </div>
+                            </div>
+                            <% end %>
+                        <i id="preview4-modal-cancel" class="fa fa-2x fa-times-circle preview-cancel"></i>
                     </div>
                     <div class="project-tag-other">
                         <ul class="project-tag-info">
                             <li><a href="#"># <%= @donate.project_category %></a></li>
                             <li><a href="#"># <%= @donate.connection_area %></a></li>
+                            <li><i class="far fa-edit" id="preview5-edit-modal"></i></li>
                         </ul>
+                        <div class="preview5-edit-modal" id="preview5-input-modal">
+                            <%= form_with url: "/donate/#{@donate.id}/update" do |form| %>
+                                <div class="edit-main">
+                                    <div class="donate-edit-container">
+                                        <h1 class="edit-title">あなたのプロジェクトをわかりやすく伝えましょう</h1>
+                                        <div class="end-date">
+                                            <p>カテゴリー</p>
+                                            <%= form.select :project_category, options_for_select(['アート・写真', '音楽', '舞台・パフォーマンス', 'プロダクト', 'テクノロジー・ガジェット', 'ゲーム・サービス開発', 'フード・飲食店', 'ファッション', '映像・映画', '書籍・雑誌出版', 'アニメ・漫画', 'スポーツ', 'ビジネス・起業', 'ソーシャルグッド', 'ビューティー・ヘルスケア', 'まちづくり・地域活性化', 'チャレンジ'], selected: @donate.project_category), include_blank: true, class: 'project-category' %>
+                                            <div class="text-box">
+                                                <p>※ カテゴリーの決定に関しましては、弊社の基準が適用されることがあります。</p>
+                                            </div>
+                                        </div>
+                                        <div class="connection-area">
+                                            <p>関連するエリア</p>
+                                            <%= form.select :connection_area, options_for_select(['北海道', '青森県', '岩手県', '宮城県', '秋田県', '山形県', '福島県', '茨城県', '栃木県', '群馬県', '埼玉県', '千葉県', '東京都', '神奈川県', '新潟県', '富山県', '石川県', '福井県', '山梨県', '長野県', '岐阜県', '静岡県', '愛知県', '三重県', '滋賀県', '京都府', '大阪府', '兵庫県', '奈良県', '和歌山県', '鳥取県', '島根県', '岡山県', '広島県', '山口県', '徳島県', '香川県', '愛媛県', '高知県', '福岡県', '佐賀県', '長崎県', '熊本県', '大分県', '宮崎県', '鹿児島県', '沖縄県'], selected: @donate.connection_area), { include_blank: '選択しない'}, class: 'form-control' %>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="edit-footer">
+                                    <div class="footer-btn">
+                                        <input type="submit" class="edit-btn edit-submit" value="編集内容を送信">
+                                    </div>
+                                </div>
+                                <% end %>
+                            <i id="preview5-modal-cancel" class="fa fa-2x fa-times-circle preview-cancel"></i>
+                        </div>
                         <ul class="project-link-sns">
                             <li><a href="#">facebook</a></li>
                             <li><a href="#">twitter</a></li>
@@ -82,15 +207,29 @@
             </div>
             <div class="project-main-container">
                 <div class="project-content-left">
-                    <h3>プロジェクト本文</h3>
-                    <div class="project-mainbody">
+                    <h3>プロジェクト本文<i class="far fa-edit" id="preview6-edit-modal"></i></h3>
+                    <div class="project-mainbody" id="preview6-fadeout-modal">
                         <%= @donate.mainbody %>
                     </div>
                 </div>
-                <div class="project-content-right">
-                    <h3>プロジェクトオーナー</h3>
+                <div class="project-content-right" id="preview6-fadein-modal">
+                    <h3>プロジェクトオーナー<i class="far fa-edit"></i></h3>
                     <div class="project-author">
-                        <%= @donate.collect_type %>
+                        <div class="author-name">
+                            <%= link_to(@user.name, "/users/#{@user.id}") %>
+                        </div>
+                        <div class="author-image">
+                            <img src="<%= "/user_images/#{@user.image_name}" %>">
+                        </div>
+                        <div class="author-description">
+                            <%= @user.description %>
+                        </div>
+                        <div class="author-page-link">
+                            <%= @user.page_link %>
+                        </div>
+                        <div class="author-sns-link">
+                            <%= @user.sns_link %>
+                        </div>
                     </div>
                     <h3>リターン</h3>
                     <div class="project-perk">
@@ -98,9 +237,37 @@
                 </div>
             </div>
         </div>
+            <div class="content-edit-left">
+                <div class="preview6-edit-modal project-mainbody-edit" id="preview6-input-modal">
+                    <%= form_with url: "/donate/#{@donate.id}/update" do |form| %>
+                        <div class="edit-main">
+                            <div class="donate-edit-container">
+                                <h1 class="edit-title">あなたの想いを語り尽くしましょう</h1>
+                                <div>
+                                    <p class="mainbody-title">本文 <span>*</span></p>
+                                            <div class="donate-edit-field">
+                                                <%= form.rich_text_area :mainbody, value: @donate.mainbody, class: "mainbody-area" %>
+                                            </div>
+                                        <p>※ 行間をあけずに改行するには【 Shift + Enter 】を押してください。</p>
+                                        <p>※ 特定商取引法に基づく記載は、法人/個人問わず、すべてのプロジェクトオーナー様に義務付けられております。必ずご記入ください。</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="edit-footer">
+                            <div class="footer-btn">
+                                <input type="submit" class="edit-btn edit-submit" value="編集内容を送信">
+                            </div>
+                        </div>
+                    <% end %>
+                    <i id="preview6-modal-cancel" class="fa fa-2x fa-times-circle preview-cancel"></i>
+                </div>
+            </div>
+            <div id="mainbody-edit-input">
+            </div>
         <div class="edit-footer">
             <div class="footer-btn">
-                <%= link_to("編集に戻る","/donate/#{@donate.id}/edit", {class: "edit-btn preview-btn"}) %>
+                <%= link_to('編集画面に戻る', :back, {class: "edit-btn preview-btn"}) %>
             </div>
         </div>
     </main>

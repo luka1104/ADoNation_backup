@@ -1,367 +1,363 @@
 <body>
-    <div class="blogs owl-carousel">
-        <% @donates.each do |donate| %>
-            <div class="blog"> 
-                <img src="<%= "/donate_images/#{donate.donate_image}" %>" alt="">
-                <div class="blog-description">
-                    <div class="categorie"><%= donate.title %></div>
-                    <h2 class="title"><%= donate.body %></h2>
-                    <div class="date"><%= donate.created_at %></div>
-                    <div class="btn"><%= link_to("ReadMore", "/donate/#{donate.id}") %></div>
+    <div class="blogs">
+        <div class="slider mypattern slick-center" id="slick-center">
+            <% @donates.each do |donate| %>
+                <div class="blog"> 
+                    <img src="<%= "#{donate.donate_image}" %>" alt="">
+                    <div class="blog-description">
+                        <div class="categorie"><%= donate.title %></div>
+                        <h2 class="title"><%= donate.body %></h2>
+                        <div class="date"><%= donate.created_at %></div>
+                        <div class="btn"><%= link_to("ReadMore", "/donate/#{donate.id}") %></div>
+                    </div>
                 </div>
-            </div>
-        <% end %>
-        <div class="blog">
-            <img src="/assets/1.jpg" alt="">
-            <div class="blog-description">
-                <div class="categorie">ADoNation</div>
-                <h2 class="title">寄付して！</h2>
-                <div class="date">Jan 13 2020</div>
-                <a href="#" class="btn">Read More</a>
-            </div>
-        </div>
-
-        <div class="blog">
-            <img src="/assets/2.jpg" alt="">
-            <div class="blog-description">
-                <div class="categorie">三菱商事</div>
-                <h2 class="title">具！</h2>
-                <div class="date">Jan 13 2020</div>
-                <a href="#" class="btn">Read More</a>
-            </div>
-        </div>
-
-        <div class="blog">
-            <img src="/assets/3.jpeg" alt="">
-            <div class="blog-description">
-                <div class="categorie">sony</div>
-                <h2 class="title">畑始めます</h2>
-                <div class="date">kokd</div>
-                <a href="#" class="btn">Read More</a>
-            </div>
-        </div>
-
-        <div class="blog">
-            <img src="/assets/4.jpeg" alt="">
-            <div class="blog-description">
-                <div class="categorie">Google</div>
-                <h2 class="title">Apple潰す</h2>
-                <div class="date">Jan 13 2020</div>
-                <a href="#" class="btn">Read More</a>
-            </div>
+            <% end %>
         </div>
     </div>
-
+    <div class="next-content">
+        <i class="fas fa-caret-down"></i>
+    </div>
     <div class="main-container">
-        <div class="box hot">
-            <ul class="list-con">
-                <% @donates.each do |donate| %>
-                    <li>
-                        <%= link_to("/donate/#{donate.id}") do %>
-                            <article class="project-list-link">
-                                <div class="img"></div>
-                                <div class="text">
-                                    <div class="ttl"><%= donate.title %></div>
-                                    <div class="sab">
-                                        <p class="kinngaku">現在 2251円</p>
-                                        <p class="siennsya">支援者 17人</p>
-                                        <p class="nissuu">残り 34日</p>
+        <div class="what-adonation">
+            <h1>What Is ADoNation?</h1>
+            <img src="/assets/whatadonation.png" alt="">
+            <div class="description">
+                <p>ADoNationはAd(広告)、Donate(寄付)、Nation(民衆)を組み合わせた寄付の新しいカタチです。</p>
+            </div>
+        </div>
+        <div class="next-content2">
+            <i class="fas fa-caret-down"></i>
+        </div>
+        <div class="how-to-donate">
+            <h1>キフの仕方</h1>
+            <img src="/assets/howtodonate.png" alt="">
+        </div>
+        <div class="common-questions">
+            <h1>よくある質問</h1>
+            <img src="/assets/question.png" alt="">
+        </div>
+
+        <div class="hide-content">
+            <div class="box hot">
+                <ul class="list-con">
+                    <% @donates.each do |donate| %>
+                        <li>
+                            <%= link_to("/donate/#{donate.id}") do %>
+                                <article class="project-list-link">
+                                    <div class="img"></div>
+                                    <div class="text">
+                                        <div class="ttl"><%= donate.title %></div>
+                                        <div class="sab">
+                                            <p class="kinngaku">現在 2251円</p>
+                                            <p class="siennsya">支援者 17人</p>
+                                            <p class="nissuu">残り 34日</p>
+                                        </div>
                                     </div>
+                                </article>
+                            <% end %>
+                        </li>
+                    <% end %>
+                    <li>
+                        <article>
+                            <div class="img"></div>
+                            <div class="text">
+                                <div class="ttl">支援して！</div>
+                                <div class="sab">
+                                    <p class="kinngaku">現在 2251円</p>
+                                    <p class="siennsya">支援者 17人</p>
+                                    <p class="nissuu">残り 34日</p>
                                 </div>
-                            </article>
-                        <% end %>
+                            </div>
+                        </article>
                     </li>
-                <% end %>
-                <li>
-                    <article>
-                        <div class="img"></div>
-                        <div class="text">
-                            <div class="ttl">支援して！</div>
-                            <div class="sab">
-                                <p class="kinngaku">現在 2251円</p>
-                                <p class="siennsya">支援者 17人</p>
-                                <p class="nissuu">残り 34日</p>
+                    <li>
+                        <article>
+                            <div class="img"></div>
+                            <div class="text">
+                                <div class="ttl">支援して！</div>
+                                <div class="sab">
+                                    <p class="kinngaku">現在 2251円</p>
+                                    <p class="siennsya">支援者 17人</p>
+                                    <p class="nissuu">残り 34日</p>
+                                </div>
                             </div>
-                        </div>
-                    </article>
-                </li>
-                <li>
-                    <article>
-                        <div class="img"></div>
-                        <div class="text">
-                            <div class="ttl">支援して！</div>
-                            <div class="sab">
-                                <p class="kinngaku">現在 2251円</p>
-                                <p class="siennsya">支援者 17人</p>
-                                <p class="nissuu">残り 34日</p>
+                        </article>
+                    </li>
+                    <li>
+                        <article>
+                            <div class="img"></div>
+                            <div class="text">
+                                <div class="ttl">支援して！</div>
+                                <div class="sab">
+                                    <p class="kinngaku">現在 2251円</p>
+                                    <p class="siennsya">支援者 17人</p>
+                                    <p class="nissuu">残り 34日</p>
+                                </div>
                             </div>
-                        </div>
-                    </article>
-                </li>
-                <li>
-                    <article>
-                        <div class="img"></div>
-                        <div class="text">
-                            <div class="ttl">支援して！</div>
-                            <div class="sab">
-                                <p class="kinngaku">現在 2251円</p>
-                                <p class="siennsya">支援者 17人</p>
-                                <p class="nissuu">残り 34日</p>
+                        </article>
+                    </li>
+                    <li>
+                        <article>
+                            <div class="img"></div>
+                            <div class="text">
+                                <div class="ttl">支援して！</div>
+                                <div class="sab">
+                                    <p class="kinngaku">現在 2251円</p>
+                                    <p class="siennsya">支援者 17人</p>
+                                    <p class="nissuu">残り 34日</p>
+                                </div>
                             </div>
-                        </div>
-                    </article>
-                </li>
-                <li>
-                    <article>
-                        <div class="img"></div>
-                        <div class="text">
-                            <div class="ttl">支援して！</div>
-                            <div class="sab">
-                                <p class="kinngaku">現在 2251円</p>
-                                <p class="siennsya">支援者 17人</p>
-                                <p class="nissuu">残り 34日</p>
+                        </article>
+                    </li>
+                    <li>
+                        <article>
+                            <div class="img"></div>
+                            <div class="text">
+                                <div class="ttl">支援して！</div>
+                                <div class="sab">
+                                    <p class="kinngaku">現在 2251円</p>
+                                    <p class="siennsya">支援者 17人</p>
+                                    <p class="nissuu">残り 34日</p>
+                                </div>
                             </div>
-                        </div>
-                    </article>
-                </li>
-                <li>
-                    <article>
-                        <div class="img"></div>
-                        <div class="text">
-                            <div class="ttl">支援して！</div>
-                            <div class="sab">
-                                <p class="kinngaku">現在 2251円</p>
-                                <p class="siennsya">支援者 17人</p>
-                                <p class="nissuu">残り 34日</p>
-                            </div>
-                        </div>
-                    </article>
-                </li>
+                        </article>
+                    </li>
 
-            </ul>
+                </ul>
 
-        </div>
-        <div class="box new">
-            <ul class="list-con">
+            </div>
+            <div class="box new">
+                <ul class="list-con">
 
-                <li>
-                    <article>
-                        <div class="img"></div>
-                        <div class="text">
-                            <div class="ttl">支援して！</div>
-                            <div class="sab">
-                                <p class="kinngaku">現在 2251円</p>
-                                <p class="siennsya">支援者 17人</p>
-                                <p class="nissuu">残り 34日</p>
+                    <li>
+                        <article>
+                            <div class="img"></div>
+                            <div class="text">
+                                <div class="ttl">支援して！</div>
+                                <div class="sab">
+                                    <p class="kinngaku">現在 2251円</p>
+                                    <p class="siennsya">支援者 17人</p>
+                                    <p class="nissuu">残り 34日</p>
+                                </div>
                             </div>
-                        </div>
-                    </article>
-                </li>
-                <li>
-                    <article>
-                        <div class="img"></div>
-                        <div class="text">
-                            <div class="ttl">支援して！</div>
-                            <div class="sab">
-                                <p class="kinngaku">現在 2251円</p>
-                                <p class="siennsya">支援者 17人</p>
-                                <p class="nissuu">残り 34日</p>
+                        </article>
+                    </li>
+                    <li>
+                        <article>
+                            <div class="img"></div>
+                            <div class="text">
+                                <div class="ttl">支援して！</div>
+                                <div class="sab">
+                                    <p class="kinngaku">現在 2251円</p>
+                                    <p class="siennsya">支援者 17人</p>
+                                    <p class="nissuu">残り 34日</p>
+                                </div>
                             </div>
-                        </div>
-                    </article>
-                </li>
-                <li>
-                    <article>
-                        <div class="img"></div>
-                        <div class="text">
-                            <div class="ttl">支援して！</div>
-                            <div class="sab">
-                                <p class="kinngaku">現在 2251円</p>
-                                <p class="siennsya">支援者 17人</p>
-                                <p class="nissuu">残り 34日</p>
+                        </article>
+                    </li>
+                    <li>
+                        <article>
+                            <div class="img"></div>
+                            <div class="text">
+                                <div class="ttl">支援して！</div>
+                                <div class="sab">
+                                    <p class="kinngaku">現在 2251円</p>
+                                    <p class="siennsya">支援者 17人</p>
+                                    <p class="nissuu">残り 34日</p>
+                                </div>
                             </div>
-                        </div>
-                    </article>
-                </li>
-                <li>
-                    <article>
-                        <div class="img"></div>
-                        <div class="text">
-                            <div class="ttl">支援して！</div>
-                            <div class="sab">
-                                <p class="kinngaku">現在 2251円</p>
-                                <p class="siennsya">支援者 17人</p>
-                                <p class="nissuu">残り 34日</p>
+                        </article>
+                    </li>
+                    <li>
+                        <article>
+                            <div class="img"></div>
+                            <div class="text">
+                                <div class="ttl">支援して！</div>
+                                <div class="sab">
+                                    <p class="kinngaku">現在 2251円</p>
+                                    <p class="siennsya">支援者 17人</p>
+                                    <p class="nissuu">残り 34日</p>
+                                </div>
                             </div>
-                        </div>
-                    </article>
-                </li>
-                <li>
-                    <article>
-                        <div class="img"></div>
-                        <div class="text">
-                            <div class="ttl">支援して！</div>
-                            <div class="sab">
-                                <p class="kinngaku">現在 2251円</p>
-                                <p class="siennsya">支援者 17人</p>
-                                <p class="nissuu">残り 34日</p>
+                        </article>
+                    </li>
+                    <li>
+                        <article>
+                            <div class="img"></div>
+                            <div class="text">
+                                <div class="ttl">支援して！</div>
+                                <div class="sab">
+                                    <p class="kinngaku">現在 2251円</p>
+                                    <p class="siennsya">支援者 17人</p>
+                                    <p class="nissuu">残り 34日</p>
+                                </div>
                             </div>
-                        </div>
-                    </article>
-                </li>
-                <li>
-                    <article>
-                        <div class="img"></div>
-                        <div class="text">
-                            <div class="ttl">支援して！</div>
-                            <div class="sab">
-                                <p class="kinngaku">現在 2251円</p>
-                                <p class="siennsya">支援者 17人</p>
-                                <p class="nissuu">残り 34日</p>
+                        </article>
+                    </li>
+                    <li>
+                        <article>
+                            <div class="img"></div>
+                            <div class="text">
+                                <div class="ttl">支援して！</div>
+                                <div class="sab">
+                                    <p class="kinngaku">現在 2251円</p>
+                                    <p class="siennsya">支援者 17人</p>
+                                    <p class="nissuu">残り 34日</p>
+                                </div>
                             </div>
-                        </div>
-                    </article>
-                </li>
-                <li>
-                    <article>
-                        <div class="img"></div>
-                        <div class="text">
-                            <div class="ttl">支援して！</div>
-                            <div class="sab">
-                                <p class="kinngaku">現在 2251円</p>
-                                <p class="siennsya">支援者 17人</p>
-                                <p class="nissuu">残り 34日</p>
+                        </article>
+                    </li>
+                    <li>
+                        <article>
+                            <div class="img"></div>
+                            <div class="text">
+                                <div class="ttl">支援して！</div>
+                                <div class="sab">
+                                    <p class="kinngaku">現在 2251円</p>
+                                    <p class="siennsya">支援者 17人</p>
+                                    <p class="nissuu">残り 34日</p>
+                                </div>
                             </div>
-                        </div>
-                    </article>
-                </li>
-                <li>
-                    <article>
-                        <div class="img"></div>
-                        <div class="text">
-                            <div class="ttl">支援して！</div>
-                            <div class="sab">
-                                <p class="kinngaku">現在 2251円</p>
-                                <p class="siennsya">支援者 17人</p>
-                                <p class="nissuu">残り 34日</p>
+                        </article>
+                    </li>
+                    <li>
+                        <article>
+                            <div class="img"></div>
+                            <div class="text">
+                                <div class="ttl">支援して！</div>
+                                <div class="sab">
+                                    <p class="kinngaku">現在 2251円</p>
+                                    <p class="siennsya">支援者 17人</p>
+                                    <p class="nissuu">残り 34日</p>
+                                </div>
                             </div>
-                        </div>
-                    </article>
-                </li>
+                        </article>
+                    </li>
 
-            </ul>
-        </div>
-        <div class="box populer">
-            <ul class="list-con">
+                </ul>
+            </div>
+            <div class="box populer">
+                <ul class="list-con">
 
-                <li>
-                    <article>
-                        <div class="img"></div>
-                        <div class="text">
-                            <div class="ttl">支援して！</div>
-                            <div class="sab">
-                                <p class="kinngaku">現在 2251円</p>
-                                <p class="siennsya">支援者 17人</p>
-                                <p class="nissuu">残り 34日</p>
+                    <li>
+                        <article>
+                            <div class="img"></div>
+                            <div class="text">
+                                <div class="ttl">支援して！</div>
+                                <div class="sab">
+                                    <p class="kinngaku">現在 2251円</p>
+                                    <p class="siennsya">支援者 17人</p>
+                                    <p class="nissuu">残り 34日</p>
+                                </div>
                             </div>
-                        </div>
-                    </article>
-                </li>
-                <li>
-                    <article>
-                        <div class="img"></div>
-                        <div class="text">
-                            <div class="ttl">支援して！</div>
-                            <div class="sab">
-                                <p class="kinngaku">現在 2251円</p>
-                                <p class="siennsya">支援者 17人</p>
-                                <p class="nissuu">残り 34日</p>
+                        </article>
+                    </li>
+                    <li>
+                        <article>
+                            <div class="img"></div>
+                            <div class="text">
+                                <div class="ttl">支援して！</div>
+                                <div class="sab">
+                                    <p class="kinngaku">現在 2251円</p>
+                                    <p class="siennsya">支援者 17人</p>
+                                    <p class="nissuu">残り 34日</p>
+                                </div>
                             </div>
-                        </div>
-                    </article>
-                </li>
-                <li>
-                    <article>
-                        <div class="img"></div>
-                        <div class="text">
-                            <div class="ttl">支援して！</div>
-                            <div class="sab">
-                                <p class="kinngaku">現在 2251円</p>
-                                <p class="siennsya">支援者 17人</p>
-                                <p class="nissuu">残り 34日</p>
+                        </article>
+                    </li>
+                    <li>
+                        <article>
+                            <div class="img"></div>
+                            <div class="text">
+                                <div class="ttl">支援して！</div>
+                                <div class="sab">
+                                    <p class="kinngaku">現在 2251円</p>
+                                    <p class="siennsya">支援者 17人</p>
+                                    <p class="nissuu">残り 34日</p>
+                                </div>
                             </div>
-                        </div>
-                    </article>
-                </li>
-                <li>
-                    <article>
-                        <div class="img"></div>
-                        <div class="text">
-                            <div class="ttl">支援して！</div>
-                            <div class="sab">
-                                <p class="kinngaku">現在 2251円</p>
-                                <p class="siennsya">支援者 17人</p>
-                                <p class="nissuu">残り 34日</p>
+                        </article>
+                    </li>
+                    <li>
+                        <article>
+                            <div class="img"></div>
+                            <div class="text">
+                                <div class="ttl">支援して！</div>
+                                <div class="sab">
+                                    <p class="kinngaku">現在 2251円</p>
+                                    <p class="siennsya">支援者 17人</p>
+                                    <p class="nissuu">残り 34日</p>
+                                </div>
                             </div>
-                        </div>
-                    </article>
-                </li>
-                <li>
-                    <article>
-                        <div class="img"></div>
-                        <div class="text">
-                            <div class="ttl">支援して！</div>
-                            <div class="sab">
-                                <p class="kinngaku">現在 2251円</p>
-                                <p class="siennsya">支援者 17人</p>
-                                <p class="nissuu">残り 34日</p>
+                        </article>
+                    </li>
+                    <li>
+                        <article>
+                            <div class="img"></div>
+                            <div class="text">
+                                <div class="ttl">支援して！</div>
+                                <div class="sab">
+                                    <p class="kinngaku">現在 2251円</p>
+                                    <p class="siennsya">支援者 17人</p>
+                                    <p class="nissuu">残り 34日</p>
+                                </div>
                             </div>
-                        </div>
-                    </article>
-                </li>
-                <li>
-                    <article>
-                        <div class="img"></div>
-                        <div class="text">
-                            <div class="ttl">支援して！</div>
-                            <div class="sab">
-                                <p class="kinngaku">現在 2251円</p>
-                                <p class="siennsya">支援者 17人</p>
-                                <p class="nissuu">残り 34日</p>
+                        </article>
+                    </li>
+                    <li>
+                        <article>
+                            <div class="img"></div>
+                            <div class="text">
+                                <div class="ttl">支援して！</div>
+                                <div class="sab">
+                                    <p class="kinngaku">現在 2251円</p>
+                                    <p class="siennsya">支援者 17人</p>
+                                    <p class="nissuu">残り 34日</p>
+                                </div>
                             </div>
-                        </div>
-                    </article>
-                </li>
-                <li>
-                    <article>
-                        <div class="img"></div>
-                        <div class="text">
-                            <div class="ttl">支援して！</div>
-                            <div class="sab">
-                                <p class="kinngaku">現在 2251円</p>
-                                <p class="siennsya">支援者 17人</p>
-                                <p class="nissuu">残り 34日</p>
+                        </article>
+                    </li>
+                    <li>
+                        <article>
+                            <div class="img"></div>
+                            <div class="text">
+                                <div class="ttl">支援して！</div>
+                                <div class="sab">
+                                    <p class="kinngaku">現在 2251円</p>
+                                    <p class="siennsya">支援者 17人</p>
+                                    <p class="nissuu">残り 34日</p>
+                                </div>
                             </div>
-                        </div>
-                    </article>
-                </li>
-                <li>
-                    <article>
-                        <div class="img"></div>
-                        <div class="text">
-                            <div class="ttl">支援して！</div>
-                            <div class="sab">
-                                <p class="kinngaku">現在 2251円</p>
-                                <p class="siennsya">支援者 17人</p>
-                                <p class="nissuu">残り 34日</p>
+                        </article>
+                    </li>
+                    <li>
+                        <article>
+                            <div class="img"></div>
+                            <div class="text">
+                                <div class="ttl">支援して！</div>
+                                <div class="sab">
+                                    <p class="kinngaku">現在 2251円</p>
+                                    <p class="siennsya">支援者 17人</p>
+                                    <p class="nissuu">残り 34日</p>
+                                </div>
                             </div>
-                        </div>
-                    </article>
-                </li>
-            </ul>
+                        </article>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
+        <div class="footer-ad">
+            <div class="footer-btn-ad fixed-ad">
+                <%= link_to('/first', {class: "easy-ad-btn"}) do %>
+                    <i class="fas fa-play"></i>
+                    <p>広告を再生</p>
+                <% end %>
+            </div>
+        </div>
     </main>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-    <script src="owl.carousel.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="slick/slick.min.js"></script>
 </body>

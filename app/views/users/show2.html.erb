@@ -4,9 +4,88 @@
       <img src="<%= "/user_images/#{@user.image_name}" %>">
       <h2><%= @user.name %></h2>
       <p><%= @user.email %></p>
-      <% if @user.id == @current_user.id %>
-        <%= link_to("編集","/users/#{@user.id}/edit") %>
+      <p><%= @user_point.amount %></p>
+      <% if @current_user.project_owner %>
+        <p><%= @user.description %></p>
+        <p><%= @user.page_link %></p>
+        <p><%= @user.sns_link %></p>
       <% end %>
+      <% if @user.id == @current_user.id %>
+        <%= button_to "reward", {controller: 'users', action: 'reward'}, {method: :post, params: {amount: 100}} %>
+        <div id="user-edit-modal">
+          <p>編集</p>
+        </div>
+          <div class="user-edit-modal" id="user-input-modal">
+            <%= form_tag("/users/#{@user.id}/update",{multipart: true}) do %>
+              <div class="login-input">
+                <h2>登録情報の編集</h2>
+                <p>ユーザー名</p>
+                <input id="userid" name="name" type="text" placeholder="ユーザー名" value="<%= @user.name %>">
+                <p>プロフィール画像</p>
+                <input id="image-holder" name="image" type="file">
+                <p>メールアドレス</p>
+                <input id="userid" name="email" type="text" placeholder="メールアドレス" value="<%= @user.email %>">
+                <% if @current_user.project_owner %>
+                  <p>プロフィール</p>
+                  <textarea id="userid" name="description" type="text" placeholder="プロフィール" value="<%= @user.description %>"></textarea>
+                  <p>ページリンク</p>
+                  <input id="userid" name="page_link" type="text" placeholder="ページリンク" value="<%= @user.page_link %>">
+                  <p>SNSリンク</p>
+                  <input id="userid" name="sns_link" type="text" placeholder="SNSリンク" value="<%= @user.sns_link %>">
+                <% end %>
+                <%= link_to("/users/#{@user.id}/destroy", {method:"post"}) do %>
+                    <input type="submit" class="long-btn login-submit" value="アカウントを削除">
+                <% end %>
+                <input type="submit" class="long-btn login-submit" value="編集内容を送信"> 
+                <i id="user-modal-cancel" class="fa fa-2x fa-times"></i>
+              </div>
+            <% end %>
+          </div>
+          <% if @current_user.project_owner %>
+            <%= link_to("プロジェクトを投稿する","/donate/raisedonate_new") %>
+          <% else %>
+            <div id="owner-edit-modal">
+              <p>プロジェクトオーナーになる</p>
+            </div>
+            <div class="owner-edit-modal" id="owner-input-modal">
+              <%= form_tag("/users/#{@user.id}/update",{multipart: true}) do %>
+                <div class="login-input">
+                  <h2>プロジェクトオーナー申請フォーム</h2>
+                  <p>プロフィール</p>
+                  <textarea id="userid" name="description" type="text" placeholder="プロフィール" value="<%= @user.description %>"></textarea>
+                  <p>ページリンク</p>
+                  <input id="userid" name="page_link" type="text" placeholder="ページリンク" value="<%= @user.page_link %>">
+                  <p>SNSリンク</p>
+                  <input id="userid" name="sns_link" type="text" placeholder="SNSリンク" value="<%= @user.sns_link %>">
+                  <input type="submit" class="long-btn login-submit" value="以上の内容で申請">
+                  <i id="owner-modal-cancel" class="fa fa-2x fa-times"></i>
+                </div>
+              <% end %>
+            </div>
+            <% end %>
+      <% end %>
+      <div class="owned-project">
+        <h2>投稿したプロジェクト</h2>
+        <ul class="list-con">
+            <% @user.donates.each do |donate| %>
+                <li>
+                    <%= link_to("/donate/#{donate.id}") do %>
+                        <article class="project-list-link">
+                            <img src="<%= "#{donate.donate_image}" %>" alt="">
+                            <div class="text">
+                                <div class="ttl"><%= donate.title %></div>
+                                <div class="sab">
+                                    <p class="kinngaku">現在 2251円</p>
+                                    <p class="siennsya">支援者 17人</p>
+                                    <p class="nissuu">残り 34日</p>
+                                </div>
+                            </div>
+                        </article>
+                    <% end %>
+                </li>
+            <% end %>
+        </ul>
+      </div>
     </div>
   </div>
 </div>

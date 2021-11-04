@@ -20,5 +20,7 @@ class ProjectTagsController < ApplicationController
             flash[:notice] = "#{message}"
         end
     end
+
 end
+
 end

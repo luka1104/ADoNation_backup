@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_11_105103) do
+ActiveRecord::Schema.define(version: 2021_10_27_064111) do
 
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
@@ -50,10 +50,32 @@ ActiveRecord::Schema.define(version: 2021_08_11_105103) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "ad_views", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "amount"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "adviews", force: :cascade do |t|
+    t.integer "amount"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "donate_id"
+  end
+
   create_table "donate_project_tags", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "tag_id"
+    t.integer "donate_id"
+  end
+
+  create_table "donatepoints", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.date "expired_at"
+    t.integer "amount"
     t.integer "donate_id"
   end
 
@@ -74,6 +96,7 @@ ActiveRecord::Schema.define(version: 2021_08_11_105103) do
     t.string "project_category"
     t.string "connection_area"
     t.text "donate_tag"
+    t.integer "user_id"
   end
 
   create_table "likes", force: :cascade do |t|
@@ -81,6 +104,66 @@ ActiveRecord::Schema.define(version: 2021_08_11_105103) do
     t.integer "post_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "point_breakdowns", force: :cascade do |t|
+    t.integer "user_point_id"
+    t.integer "point_history_id"
+    t.integer "amount"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "point_compensations", force: :cascade do |t|
+    t.integer "admin_id"
+    t.integer "amount"
+    t.string "explanation"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "point_histories", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "amount"
+    t.string "type"
+    t.integer "type_id"
+    t.integer "pointable_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["pointable_id"], name: "index_point_histories_on_pointable_id"
+  end
+
+  create_table "point_records", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "amount"
+    t.string "type"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "pointbreakdowns", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "amount"
+    t.integer "point_history_id"
+    t.integer "donate_point_id"
+  end
+
+  create_table "pointcompensations", force: :cascade do |t|
+    t.integer "amount"
+    t.string "explanation"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "donate_id"
+  end
+
+  create_table "pointhistories", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "amount"
+    t.string "type"
+    t.integer "type_id"
+    t.integer "donate_id"
   end
 
   create_table "posts", force: :cascade do |t|
@@ -102,6 +185,14 @@ ActiveRecord::Schema.define(version: 2021_08_11_105103) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "user_points", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "amount"
+    t.date "expired_at"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "email"
@@ -110,8 +201,14 @@ ActiveRecord::Schema.define(version: 2021_08_11_105103) do
     t.string "image_name"
     t.string "password_digest"
     t.boolean "admin", default: false
+    t.boolean "project_owner", default: false
+    t.text "description"
+    t.string "owner_area"
+    t.string "page_link"
+    t.string "sns_link"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "point_histories", "pointables"
 end

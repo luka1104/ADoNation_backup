@@ -101,6 +101,8 @@ Rails.application.routes.draw do
 
   post "/users/:id/update" => "users#update"
 
+  post "/users/:id/reward" => "users#reward"
+
   get "login" => "users#login_form"
 
   get "users/:id/likes" => "users#likes"

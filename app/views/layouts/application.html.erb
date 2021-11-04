@@ -1,63 +1,65 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>kifluka</title>
+    <title>ADoNation</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
-    <link rel="stylesheet" href="owl.theme.default.css">
-    <link rel="stylesheet" href="owl.carousel.css">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
   </head>
 
   <body>
         <header>
             <div id="logo">
-                <a href="/" class="header-logo">kifluka</a>
-                <div id="logo-menu">
-                    <li><a href="/" class="menu-text">kifluka</a></li>
-                    <li class="logo-com"><a href="/community" class="menu-text">kifluka-Community-</a></li>
-                    <li class="logo-aid"><a href="/aid" class="menu-text">kifluka-AiD-</a></li>
+                <a href="/" class="header-logo"><img src="/assets/adonationlogo.png" alt=""></a>
+                <div id="logo-menu" class="hide-content">
+                    <li><a href="/" class="menu-text"></a></li>
+                    <li class="logo-com"><a href="/community" class="menu-text">ADoNation-Community-</a></li>
+                    <li class="logo-aid"><a href="/aid" class="menu-text">ADoNation-AiD-</a></li>
                 </div>
             </div>
-            <form action="/projects" method="get">
-             <input id="search" id="s" name="s" type="text" placeholder="キーワード検索"/>
-             <button type="submit" id="kensaku"><i class="fas fa-search"></i></button>
-            </form>
+            <div class="hide-content">
+                <form action="/projects" method="get">
+                <input id="search" id="s" name="s" type="text" placeholder="キーワード検索"/>
+                <button type="submit" id="kensaku"><i class="fas fa-search"></i></button>
+                </form>
+            </div>
                 <div class="header-list">
                 <% if @current_user %>
                     <ul>
                         <li><%= link_to(@current_user.name ,"/users/#{@current_user.id}") %></li>
-                        <li><%= link_to("ログアウト","/logout",{method: "post"}) %></li>
+                        <li class="header-login-group"><%= link_to("ログアウト","/logout",{method: "post"}) %></li>
                         <li class="donate">
-                            <a href="#">寄付する</a>
-                            <ul class="donate-menu">
+                            <a href="#">キフル</a>
+                            <ul class="donate-menu hide-content">
                                 <a href="/choose_ad" class="donate-text">mite寄付</a>
                                 <a href="/clickdonate" class="donate-text">タップde寄付</a>
                             </ul>
                         </li>
-                        <% if @current_user.admin %>
-                            <li><%= link_to("寄付を募る","/donate/raise_donate_admin") %></li>
+                        <% if @current_user.project_owner %>
+                            <li><%= link_to("ツノル","/donate/raise_donate_admin") %></li>
                         <% else %>
-                            <li><%= link_to("寄付を募る","/donate/raise_donate") %></li>
+                            <li><%= link_to("ツノル","/donate/raise_donate") %></li>
                         <% end %>
-                        <li><%= link_to("初めての方へ","/first") %></li>
+                        <div class="hide-content"><li><%= link_to("初めての方へ","/first") %></li></div>
                     </ul>
                 <% else %>
                     <ul>
                         <li><%= link_to("新規登録","/signup") %></li>
-                        <li><%= link_to("ログイン","/login") %></li>
+                        <li class="header-login-group"><%= link_to("ログイン","/login") %></li>
                         <li class="donate">
-                            <a href="#">寄付する</a>
+                            <a href="#">キフル</a>
                             <ul class="donate-menu">
                                 <a href="/ad" class="donate-text">mite寄付</a>
                                 <a href="/clickdonate_ano" class="donate-text">タップde寄付</a>
                             </ul>
                         </li>
-                        <li><%= link_to("寄付を募る","/donate/raise_donate") %></li>
-                        <li><%= link_to("初めての方へ","/first") %></li>
+                        <li><%= link_to("ツノル","/donate/raise_donate") %></li>
                     </ul>
                 <% end %>
                 </div>
@@ -69,12 +71,19 @@
         <% end %>
     <%= yield %>
         <footer>
-            <a href="/" class="footer-logo">kifluka</a>
+            <a href="/" class="footer-logo"><img src="/assets/adonationlogofooter.png" alt=""></a>
             <div class="footer-list">
                 <ul>
-                    <l><%= link_to("会社概要","/aboutus") %></l>
+                    <% if @current_user %>
+                        <li><%= link_to(@current_user.name ,"/users/#{@current_user.id}") %></li>
+                        <li><%= link_to("ログアウト","/logout",{method: "post"}) %></li>
+                    <% else %>
+                        <li><%= link_to("ログイン","/login") %></li>
+                        <li><%= link_to("新規登録","/signup") %></li>
+                    <% end %>
+                    <li><%= link_to("会社概要","/aboutus") %></li>
                     <li><%= link_to("採用","/recruitment") %></li>
-                    <lis><%= link_to("お問い合わせ","/contact") %></lis>
+                    <li><%= link_to("お問い合わせ","/contact") %></li>
                 </ul>
             </div>
         </footer>

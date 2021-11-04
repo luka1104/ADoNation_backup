@@ -51,24 +51,24 @@
 //donate#show//
 .donate-project-container {
     min-height: 1000px;
-    background-color: #e4e4e4;
-    padding-top: 50px;
+    background-color: white;
+    padding-top: 200px;
 }
 .donate-top-container {
     width: 80%;
     margin: 0 auto;
-    height: 850px;
+    height: 800px;
     background-color: white;
 }
 .project-base-top {
     display: flex;
-    background-color: darkkhaki;
+    background-color: white;
     height: 400px;
     width: 100%;
 }
 .donate-image {
     display: flex;
-    background-color: yellow;
+    background-color: white;
     width: 70%;
     height: 400px;
     img {
@@ -78,7 +78,7 @@
 .project-info {
     display: flex;
     flex-direction: column;
-    background-color: darkgreen;
+    background-color: white;
     width: 30%;
     height: 400px;
     p {
@@ -125,12 +125,12 @@
 .project-base-down {
     height: 450px;
     width: 100%;
-    background-color: darkcyan;
+    background-color: white;
 }
 .project-img-list {
     height: 90px;
     width: 100%;
-    background-color: darkblue;
+    background-color: white;
     img {
         width: 15%;
         height: 90px;
@@ -139,8 +139,9 @@
 }
 .project-title {
     padding: 0px 20px 10px 20px;
-    background-color: darkorange;
+    background-color: white;
     height: 60px;
+    border-bottom: 1px solid #e4e4e4;
     h1 {
         font-size: 32px;
     }
@@ -152,7 +153,7 @@
     border-bottom: 1px solid #e4e4e4;
     li {
         float: left;
-        background-color: darkorchid;
+        background-color: white;
         padding: 0 20px;
     }
 }
@@ -168,7 +169,7 @@
     height: 50px;
     li {
         float: left;
-        background-color: hotpink;
+        background-color: white;
         padding: 0 20px;
     }
     a {
@@ -182,14 +183,14 @@
     height: 50px;
     li {
         float: left;
-        background-color: lightseagreen;
+        background-color: white;
         padding: 0 20px;
     }
 }
 .project-description {
     padding: 20px;
     height: 150px;
-    background-color: indianred;
+    background-color: white;
 }
 .project-base-bottom {
     display: flex;
@@ -203,14 +204,14 @@
     height: 50px;
     li {
         float: left;
-        background-color: lightcyan;
+        background-color: white;
         padding: 0 20px;
         line-height: 50px;
     }
 }
 .project-likes {
     display: flex;
-    background-color: lightgreen;
+    background-color: white;
     line-height: 50px;
     width: 100px;
     a {
@@ -224,7 +225,7 @@
     overflow: hidden;
     margin: 0 auto;
     width: 80%;
-    background-color: #e4e4e4;
+    background-color: white;
     p {
         font-size: 24px;
         margin: 20px 0;
@@ -240,7 +241,7 @@
 .project-mainbody {
     padding: 20px;
     background-color: white;
-    box-shadow: 0 2px 6px #c1ced7;
+    box-shadow: 0 2px 6px  #c1ced7;
     width: 95%;
 }
 .project-content-right {
@@ -257,6 +258,20 @@
     background-color: white;
     box-shadow: 0 2px 6px #c1ced7;
     margin-bottom: 20px;
+}
+.author-name {
+    text-align: center;
+    padding-bottom: 20px;
+}
+.author-image {
+    text-align: center;
+    img {
+        width: 80%;
+        height: 80%;
+        border-radius: 100%;
+        box-shadow: 0 2px 6px #c1ced7;
+        object-fit: cover;
+    }
 }
 .project-perk {
     width: 95%;
@@ -292,6 +307,82 @@
     left: 0;
     background-color: rgba(0, 0, 0, 0.6);
     z-index: 100;
+}
+
+#preview-input-modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 100;
+    padding-top: 100px;
+    display: none;
+}
+#preview2-input-modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 100;
+    padding-top: 100px;
+    display: none;
+}
+#preview3-input-modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 100;
+    padding-top: 100px;
+    display: none;
+}
+#preview4-input-modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 100;
+    padding-top: 100px;
+    display: none;
+}
+#preview5-input-modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 100;
+    padding-top: 100px;
+    display: none;
+}
+#preview6-input-modal {
+    top: 0;
+    z-index: 100;
+    padding-top: 100px;
+    display: none;
+}
+#mainbody-edit-input {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 50;
+    padding-top: 100px;
+    display: none;
+}
+.preview-cancel {
+    padding-left: 300px;
 }
 .donate-edit {
     padding-top: 100px;

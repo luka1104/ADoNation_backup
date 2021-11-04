@@ -32,19 +32,10 @@
                 </div>
                 <div class="project-base-down">
                     <div class="project-img-list">
-                        <%= image_tag(@donate.donate_image_url) if @donate.donate_image.present? %><%= @donate.donate_image %>
+                        <%= image_tag(@donate.donate_image_url) if @donate.donate_image.present? %>
                     </div>
                     <div class="project-title">
                         <h1><%= @donate.title %></h1>
-                    </div>
-                    <div class="project-tag-list">
-                        <ul>
-                            <li><a href="#"># タグ１</a></li>
-                            <li><a href="#"># タグ２</a></li>
-                            <li><a href="#"># タグ３</a></li>
-                            <li><a href="#"># タグ４</a></li>
-                            <li><a href="#"># タグ５</a></li>
-                        </ul>
                     </div>
                     <div class="project-description">
                         <h2><%= @donate.body %></h2>
@@ -85,7 +76,21 @@
                 <div class="project-content-right">
                     <h3>プロジェクトオーナー</h3>
                     <div class="project-author">
-                        
+                        <div class="author-name">
+                            <%= link_to(@user.name, "/users/#{@user.id}") %>
+                        </div>
+                        <div class="author-image">
+                            <img src="<%= "/user_images/#{@user.image_name}" %>">
+                        </div>
+                        <div class="author-description">
+                            <%= @user.description %>
+                        </div>
+                        <div class="author-page-link">
+                            <%= @user.page_link %>
+                        </div>
+                        <div class="author-sns-link">
+                            <%= @user.sns_link %>
+                        </div>
                     </div>
                     <h3>リターン</h3>
                     <div class="project-perk">
@@ -95,9 +100,11 @@
             </div>
         </div>
         <div class="edit-footer">
-            <div class="footer-btn">
-                <%= link_to("編集に戻る","/donate/#{@donate.id}/edit", {class: "edit-btn preview-btn"}) %>
-            </div>
+            <% if @donate.user_id == @current_user.id %>
+                <div class="footer-btn">
+                    <%= link_to("編集に戻る","/donate/#{@donate.id}/edit", {class: "edit-btn preview-btn"}) %>
+                </div>
+            <% end %>
         </div>
     </main>
 </body>
