@@ -41,7 +41,7 @@ class UsersController < ApplicationController
       point_history_id: point_history.id,
       amount: @amount
     )
-    @user.update
+    binding.pry
     if @user.update
       session[:user_id] = @user.id
       flash[:notice] = "ポイントが正常に付与されました"

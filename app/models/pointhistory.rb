@@ -3,5 +3,5 @@ class Pointhistory < ApplicationRecord
     has_many :donate_points, through: :point_breakdowns
 
     belongs_to :donate
-    belongs_to :pointable, polymorphic: true
+    belongs_to :pointable
 end
